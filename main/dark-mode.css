@@ -1,0 +1,49 @@
+.dark-mode-style {
+    background-color: #121212;
+    
+}
+
+.dark-button {
+   
+    color: #ffffff !important;
+    background: none !important;
+    border: 1px solid #ffffff !important;
+}
+
+.dark-text {
+    color: #ffffff !important; 
+    background: none;
+}
+
+.dark-bars {
+    background-color: #ffffff !important; 
+   
+}
+
+.dark-search-button {
+    background-color: rgb(151, 151, 151) !important;
+    color: #ffffff !important;
+    border: 1px solid white !important;
+
+
+}
+
+
+
+.dark-input {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border: 1px solid #ffffff !important;
+}
+
+button {
+    &:hover {
+        cursor: pointer;
+        background-color: rgb(170, 170, 170) !important;
+    }
+}
+
+
+.dark-textarea {
+    color: white;
+}

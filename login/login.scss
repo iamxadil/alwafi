@@ -1,0 +1,232 @@
+
+@import '../main/index.css';
+@import '../main/dark-mode.css';
+
+
+
+/* Search input animation in nav */
+#nav-search-input {
+    width: 0;
+    opacity: 0;
+    padding: 0;
+    border: none;
+    border-radius: 4px;
+    background: transparent;
+    transition: width 0.4s cubic-bezier(0.4,0,0.2,1), opacity 0.3s, padding 0.3s;
+    font-size: 16px;
+    margin-left: 0.2rem; // Reduced margin for better alignment
+    pointer-events: none;
+    height: 28px;
+    font-family: 'poppins', sans-serif;
+}
+
+h1.search-active {
+    display: flex;
+    align-items: center;
+    transition: all 0.4s cubic-bezier(0.4,0,0.2,1);
+}
+
+h1.search-active #nav-search-input {
+    width: 180px;
+    opacity: 1;
+    padding: 6px 12px;
+    border: .5px solid #000000;
+    background: none;
+    pointer-events: auto;
+    margin-left: 0.5rem; // Add margin only when active for spacing
+}
+
+#search-icon {
+    transition: color 0.2s;
+    
+    &:hover {
+        color: #666;
+        scale: 1;
+    }
+}
+#nav-search-input::placeholder {
+    color: #000000;
+    opacity: 0.5; /* Placeholder color */
+}
+
+    
+
+
+
+
+    .two-bars-menu, .two-bars {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 12px;
+        width: auto;
+        transition: transform 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+
+    .first-bar, .second-bar {
+        height: 3px;
+        width: 100px;
+        background-color: black;
+    }
+
+    .two-bars-menu {
+        display: none;
+    }
+
+    .left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-top: 5px;
+    
+    img {
+        width: clamp(50px, 12vw, 95px); // Responsive width
+        height: clamp(50px, 12vw, 95px); // Responsive height
+        margin-right: 1.5rem;
+        
+        
+        &:hover {
+            transform: scale(1.2); // Scale effect on hover
+            transition: transform 0.3s ease-out; // Smooth transition
+            cursor: pointer;
+        }
+    }
+
+    h1 {
+        margin-right: 2rem; // Adds space between h1 elements
+        font-size: clamp(1.5rem, 2.5vw, 1.6rem); // Responsive font size
+        margin-top: 5px;
+        cursor: pointer;
+        position: relative;
+        transition: transform 0.3s ease-out; // Smooth transition for hover effects
+
+        &:nth-of-type(2)::after {
+           display: none;
+        }
+        
+        
+
+        
+    @media screen and (max-width: 1340px)  {
+        &:nth-child(3) {
+            display: none;
+        }
+
+        &:nth-of-type(3) {
+            font-size: 26px;
+        }
+        &:nth-of-type(4) {
+            font-size: 24px; // Adjust font size for the fourth one
+        }
+    }  }
+
+
+   
+}
+    
+
+    
+
+
+    @media (max-width: 1340px)  {
+
+        .two-bars-menu {
+            display: flex;
+        }
+        
+        .first-bar, .second-bar {
+            width: 80px; // Adjusted width for smaller screens
+        } 
+    }
+
+body{
+    overflow: hidden;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    padding: 20px;
+    
+}
+
+.text-header {
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+}
+.login-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-top: 15px;
+    border-radius: 10px;
+    width: auto;
+    backdrop-filter: blur(10px); /* Adds a blur effect */
+
+     button {
+        width: 450px;
+        padding: 10px;
+        margin: 5px 0;
+        border: none;
+        border-radius: 5px;
+        background-color: #000000;
+        color: rgb(255, 255, 255);
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+        margin-top: 15px;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+
+        &:hover {
+            background-color: #686868;
+        }
+    }
+
+    
+}
+    
+    
+
+    input {
+        width: 450px;
+        padding: 10px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        background: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-family: 'Poppins', sans-serif;
+        
+        &:focus {
+           
+            outline: none;
+        }
+
+        &:nth-child(1) {
+            margin-top: 18px;
+        }
+    }
+
+   
+
+
+
+

@@ -1,0 +1,190 @@
+@import '../main/index.css';
+@import '../login/login.css';
+@import '../laptops/laptops.css';
+
+.component-container {
+
+    height: 90vh;
+    width: 100vw;
+    overflow: hidden;
+  
+}
+
+body {
+    overflow: hidden;
+}
+
+
+.contact-box {
+    margin-top: 2rem;
+    width: 65%;
+    height: 65%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.left-info {
+    width: 35%;
+    height: 100%;
+    position: relative;
+    background-color: rgb(238, 0, 0);
+    border-top-left-radius: 40px;
+    border-bottom-left-radius: 40px;
+    background-image: url('../Assests/Images/Abstract-Background.jpg');
+    background-size: cover;
+    background-position: 50%;
+ 
+     
+
+    
+
+    .top-layer {
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+        border-top-left-radius: 40px;
+        border-bottom-left-radius: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+
+    }
+
+ 
+}
+
+
+.left-info-texts {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    margin-left: 1.5rem;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 65%;
+    width: 100%;
+    color: white;
+    
+
+    h1 {
+        font-size: clamp(18px, 2.5vw, 24px);
+    }
+
+    p {
+        font-size: clamp(12px, 3.5vw, 16px);
+    }
+    
+}
+
+
+.right-info {
+    height: 100%;
+    width: 65%;
+    border: 1px  solid rgb(163, 163, 163);
+    border-left: 0px;
+    position: relative;
+
+    .top-layer {
+        height: 100%;
+        width: 100%;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+    
+
+}
+
+.right-info-container {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-left: 1.5rem;
+
+
+    
+}
+
+.message-form {
+    
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 80%;
+    
+
+
+   
+
+    button {
+
+        width: 75%;
+        padding: 10px 15px;
+        color: rgb(0, 0, 0);
+        background: none;
+        font-family: 'poppins', sans-serif;
+        border: 1px solid black;
+        border-radius: 5px;
+        font-size: 14px;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: rgb(71, 0, 238) !important;
+            color: white;
+            cursor: pointer;
+        }
+    }
+
+
+
+
+    h1 {
+        font-size: clamp(16px, 1.5vw, 18px);
+    }
+
+    input {
+        width: 75%;
+    }
+
+
+    .message-input {
+        
+        textarea {
+            
+            height: 150px;
+            width: 300px; /* match your input width */
+            padding: 8px 12px;
+            font-size: 16px;
+            font-family: inherit;
+             border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+             resize: none; /* disables manual resizing */
+            outline: none;
+            width: 75%;
+            background: none;
+           
+        }
+    }
+}
+
+ #header-text {
+        font-size: clamp(18px, 2.5vw, 24px);
+    }

@@ -1,0 +1,113 @@
+/* Popup background overlay (semi-transparent dark overlay) */
+#cart-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.25); /* dim background */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+/* Popup container with blurred background and gray border */
+#cart-popup .popup-content {
+  background: rgba(228, 228, 228, 0.432);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1.5px solid rgba(200, 200, 200, 0.6);
+  border-radius: 16px;
+  padding: 2rem 2.5rem;
+  max-width: 450px; /* increased width for more room */
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  font-family: 'poppins','Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box; /* added for padding to not increase width */
+  font-family: 'poppins', sans-serif !important; /* changed to Poppins font */
+}
+
+/* Product info inside popup */
+#cart-popup .popup-item {
+  margin-bottom: 1.5rem;
+}
+
+#cart-popup .popup-item img {
+  width: 150px !important;  /* increased size */
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  object-fit: contain;
+  margin-top: 10px !important;
+}
+
+#cart-popup .popup-item h2 {
+  font-size: 1.4rem;
+  margin-bottom: 0.25rem;
+  color: #222;
+}
+
+#cart-popup .popup-item p {
+  font-size: 1.15rem;
+  color: #444;
+  margin: 0;
+  margin-top: 20px !important;
+ 
+}
+
+/* Buttons container inside popup */
+#cart-popup .popup-buttons {
+  display: flex;
+  flex-wrap: wrap; /* allow buttons to wrap if needed */
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+/* Buttons styling */
+#cart-popup button,
+#cart-popup a button {
+  background-color: #007BFF;
+  color: white;
+  display: flex;
+  align-items: center;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  box-sizing: border-box; /* important for padding and width */
+  max-width: 180px; /* limit max width */
+  flex: 1 1 140px !; /* flexible width, min 140px */
+  min-width: 120px; /* minimal width */
+  height: 4rem;
+    font-family: 'poppins', sans-serif !important; /* changed to Poppins font */
+}
+
+#cart-popup button:hover,
+#cart-popup a button:hover {
+  background-color: #0056b3;
+  box-shadow: 0 6px 18px rgba(0, 86, 179, 0.6);
+}
+
+/* Responsive fallback for very small screens */
+@media (max-width: 480px) {
+  #cart-popup .popup-buttons {
+    flex-direction: column; /* stack buttons vertically on small screens */
+    gap: 0.75rem;
+  }
+
+  #cart-popup button,
+  #cart-popup a button {
+    max-width: 100%;
+    
+    min-width: auto;
+    flex: none;
+  }
+}

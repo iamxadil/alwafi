@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="audios.css">
+    <title>Awlafi Company</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="../Assests/Icons/wafi-logo-filled.svg">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    
+</head>
+<body>
+
+     <!---side menu-->
+      <div class="side-menu">
+        <div class="cancel-btn">
+            <i class="bi bi-x-lg"></i>
+        </div>
+        <div class="menu-items">
+            <div>
+                <h1><i class="bi bi-house"></i></h1>
+                <h1 class="side home" ><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h1>
+            </div>
+            <div class="products-menu">
+                <div class="products-toggle">
+                    <h1><i class="bi bi-dice-3"></i></h1>
+                    <h1 class="side products">Products <i class="bi bi-caret-down-fill"></i></h1>
+                </div>
+                <div class="dropdown">
+                    <a href="../laptops/laptops.html" class="dropdown-item" style="color: white; text-decoration: none;">Laptops</a>
+                    <a href="../accessories/accessories.html" class="dropdown-item" style="color: white; text-decoration: none;">Accessories</a>
+                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">Offers</a>
+                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">Headphones</a>
+                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">PCs</a>
+                </div>
+            </div>
+            <div>
+                <h1><i class="bi bi-person-circle"></i></h1>
+                <h1 class="side login"><a href="../login/login.html" style="color: white; text-decoration: none;">Login</a></h1>
+            </div>
+            <div>
+                <h1><i class="bi bi-telephone"></i></h1>
+                <h1 class="side contact"><a href="../Contact/contact.html">Contact</a></h1>
+            </div>
+            <div>
+                <h1><i class="bi bi-info-circle"></i></h1>
+                <h1 class="side about">About</h1>
+            </div>
+        </div>
+    </div>
+
+    <!---Nav Bar-->
+    <nav>
+            <div class="main-box">
+                <div class="left-section">
+                    <img src="../Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
+
+                    <h1>
+                        <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
+                        <input type="search" id="nav-search-input" placeholder="Search...">
+                    </h1>
+                    
+                    <h1><a href="../login/login.html" style="color: black; text-decoration: none;"><i class="bi bi-person"></i></a></h1>
+                    <h1><a href="../cart/cart.html" style="color: black; position: relative;"><i class="bi bi-cart"></i><span class="cart-badge" id="cart-count">0</span></a></h1>
+                    <h1 class="dark-mode"><i class="bi bi-moon"></i></h1>
+                </div>
+                <div class="right-section">
+                    <h1 class="home"><a href="../index.html" style="color: black; text-decoration: none;" class="home-button">Home</a></h1>
+                    <div class="dropdown">
+                      <h1 class="nav-link">Products</h1>
+                      <div class="dropdown-menu">
+                        <a href="../laptops/laptops.html">Laptops</a>
+                        <a href="../accessories/accessories.html">Accessories</a>
+                        <a href="#product3">Audios</a>
+                      </div>
+                    </div>
+                  
+                    <h1>Contact</h1>
+                    <h1>About</h1>
+                         <div class="two-bars-menu">
+            <div class="first-bar"></div>
+            <div class="second-bar"></div>
+            </div>
+        </nav>
+
+
+       
+
+       <!---Container-->
+
+        
+         <div class="explore-bg">
+            <img src="../Assests/Images/Headphone.png">
+        </div>
+
+        <div class="sub-container">
+            
+        <div class="explore-box">
+
+        
+        <div class="explore-text">
+        <h1>Add to Your Amusement </h1>
+        <p>Gear up with the most up-to-date equipment<br>
+           level up your experience
+        </p>
+
+        <p><span>Pure Joy & Entertainment.</span> Click to scroll down to our<br>
+           inventory of accessories.</p>
+
+             <button class="explore-button search-button" onclick="document.querySelector('.third-page').scrollIntoView({ behavior: 'smooth' });">
+                    <i class="lni lni-scroll-down-2 icon"></i>
+                    <h1>EXPLORE</h1>
+                </button>
+         
+        </div>
+
+
+
+         
+
+        </div>
+
+        </div>
+
+
+
+          <!---Items-->
+
+
+        <div class="third-page">
+
+        <div class="laptops-title">
+            <h1>Laptops </h1>
+            <div class="two-bars">
+            <div class="first-bar"></div>
+            <div class="second-bar"></div>
+            </div>
+        </div>
+
+        <!--Laptops Cards-->
+
+        <div class="laptops-cards">
+
+            <!--first Laptop-->
+            <div class="lap-1 product-card" data-name="WIRELESS FANTECH WH06 GO TUNE" data-price="75.000 IQD" data-image="../Assests/Images/Headset.png" data-SKU="SKU123" data-form="Over Ear" data-brand="Fantech" data-color="White">
+                <img src="../Assests/Images/Headset.png" alt="laptop" class="product-image">
+                <h1 class="laptop-name">FANTECH WIRELESS WH06</h1>
+                <h1 class="laptop-price">75.000 IQD</h1>
+
+                <div class="color-circles">
+                    <h1 class="laptop-color">Colors</h1>
+                    <div class="circles">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                    </div>
+                    
+                    
+                </div>
+
+                <button class="add-to-cart"  data-name="FANTECH WIRELESS WH06 GO TUNE" data-price="75000" data-image="../Assests/Images/Headset.png">
+                                Add to Cart</button>
+            </div> 
+
+
+            <!--second Laptop-->
+            <div class="lap-1 product-card" data-name="WIRELESS FANTECH WH06 GO TUNE" data-price="75.000 IQD" data-image="../Assests/Images/Headset.png" data-SKU="SKU123" data-form="Over Ear" data-brand="Fantech" data-color="White">
+                <img src="../Assests/Images/Headset.png" alt="laptop" class="product-image">
+                <h1 class="laptop-name">FANTECH WIRELESS WH06</h1>
+                <h1 class="laptop-price">75.000 IQD</h1>
+
+                <div class="color-circles">
+                    <h1 class="laptop-color">Colors</h1>
+                    <div class="circles">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                    </div>
+                    
+                    
+                </div>
+
+                <button class="add-to-cart"  data-name="FANTECH WIRELESS WH06 GO TUNE" data-price="75000" data-image="../Assests/Images/Headset.png">
+                                Add to Cart</button>
+            </div> 
+
+            <!--third Laptops-->
+             <div class="lap-1 product-card" data-name="WIRELESS FANTECH WH06 GO TUNE" data-price="75.000 IQD" data-image="../Assests/Images/Headset.png" data-SKU="SKU123" data-form="Over Ear" data-brand="Fantech" data-color="White">
+                <img src="../Assests/Images/Headset.png" alt="laptop" class="product-image">
+                <h1 class="laptop-name">FANTECH WIRELESS WH06</h1>
+                <h1 class="laptop-price">75.000 IQD</h1>
+
+                <div class="color-circles">
+                    <h1 class="laptop-color">Colors</h1>
+                    <div class="circles">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                    </div>
+                    
+                    
+                </div>
+
+                <button class="add-to-cart"  data-name="FANTECH WIRELESS WH06 GO TUNE" data-price="75000" data-image="../Assests/Images/Headset.png">
+                                Add to Cart</button>
+            </div> 
+
+            <!--fourth Laptop-->
+            <div class="lap-1 product-card" data-name="WIRELESS FANTECH WH06 GO TUNE" data-price="75.000 IQD" data-image="../Assests/Images/Headset.png" data-SKU="SKU123" data-form="Over Ear" data-brand="Fantech" data-color="White">
+                <img src="../Assests/Images/Headset.png" alt="laptop" class="product-image">
+                <h1 class="laptop-name">FANTECH WIRELESS WH06</h1>
+                <h1 class="laptop-price">75.000 IQD</h1>
+
+                <div class="color-circles">
+                    <h1 class="laptop-color">Colors</h1>
+                    <div class="circles">
+                        <div class="circle-1"></div>
+                        <div class="circle-2"></div>
+                        <div class="circle-3"></div>
+                    </div>
+                    
+                    
+                </div>
+
+                <button class="add-to-cart"  data-name="FANTECH WIRELESS WH06 GO TUNE" data-price="75000" data-image="../Assests/Images/Headset.png">
+                                Add to Cart</button>
+            </div> 
+        </div>
+    </div>
+
+       
+    <!-- Modal -->
+        <div id="cart-popup" class="cart-popup">
+            <div class="popup-content">
+              <p>Item added to cart.</p>
+                 <div class="popup-buttons">
+                   <button id="continue-shopping">Continue Shopping</button>
+             <a href="../cart/cart.html"><button id="go-to-cart">Go to Cart</button></a>
+             </div>
+              </div>
+                </div>
+
+
+
+
+
+    <script src="audios.js" type="module"></script>
+    </body>

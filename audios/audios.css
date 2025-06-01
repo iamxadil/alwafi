@@ -1,0 +1,29 @@
+@import '../main/index.css';
+@import '../login/login.css';
+@import '../accessories/acessories.css';
+body {
+  overflow-y: auto;
+}
+
+.explore-bg {
+  height: 120vh;
+  width: 100vw;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.explore-bg img {
+  width: 2000px;
+  position: absolute;
+  left: 50%;
+  top: 20%;
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 768px) {
+  .explore-bg img {
+    width: 1250px;
+    top: 30%;
+  }
+}/*# sourceMappingURL=audios.css.map */

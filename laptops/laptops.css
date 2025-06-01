@@ -1,0 +1,420 @@
+@import '../main/index.css';
+@import '../main/index.css';
+@import '../main/dark-mode.css';
+/* Search input animation in nav */
+@import '../main/dark-mode.css';
+@import '../main/pop-up-modal.css';
+#nav-search-input {
+  width: 0;
+  opacity: 0;
+  padding: 0;
+  border: none;
+  border-radius: 4px;
+  background: transparent;
+  transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s, padding 0.3s;
+  font-size: 16px;
+  margin-left: 0.2rem;
+  pointer-events: none;
+  height: 28px;
+  font-family: "poppins", sans-serif;
+}
+
+h1.search-active {
+  display: flex;
+  align-items: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+h1.search-active #nav-search-input {
+  width: 180px;
+  opacity: 1;
+  padding: 6px 12px;
+  border: 0.5px solid #000000;
+  background: none;
+  pointer-events: auto;
+  margin-left: 0.5rem;
+}
+
+#search-icon {
+  transition: color 0.2s;
+}
+#search-icon:hover {
+  color: #666;
+  scale: 1;
+}
+
+#nav-search-input::-moz-placeholder {
+  color: #000000;
+  opacity: 0.5; /* Placeholder color */
+}
+
+#nav-search-input::placeholder {
+  color: #000000;
+  opacity: 0.5; /* Placeholder color */
+}
+
+.two-bars-menu, .two-bars {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 12px;
+  width: auto;
+  transition: transform 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
+}
+.two-bars-menu:hover, .two-bars:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.first-bar, .second-bar {
+  height: 3px;
+  width: 100px;
+  background-color: black;
+}
+
+.two-bars-menu {
+  display: none;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  margin-top: 5px;
+}
+.left-section img {
+  width: clamp(50px, 12vw, 95px);
+  height: clamp(50px, 12vw, 95px);
+  margin-right: 1.5rem;
+}
+.left-section img:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease-out;
+  cursor: pointer;
+}
+.left-section h1 {
+  margin-right: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 1.6rem);
+  margin-top: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-out;
+}
+.left-section h1:nth-of-type(2)::after {
+  display: none;
+}
+@media screen and (max-width: 1340px) {
+  .left-section h1:nth-child(3) {
+    display: none;
+  }
+  .left-section h1:nth-of-type(3) {
+    font-size: 26px;
+  }
+  .left-section h1:nth-of-type(4) {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 1340px) {
+  .two-bars-menu {
+    display: flex;
+  }
+  .first-bar, .second-bar {
+    width: 80px;
+  }
+}
+body {
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 90vh;
+  padding: 20px;
+}
+
+.text-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-top: 15px;
+  border-radius: 10px;
+  width: auto;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /* Adds a blur effect */
+}
+.login-form button {
+  width: 450px;
+  padding: 10px;
+  margin: 5px 0;
+  border: none;
+  border-radius: 5px;
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  margin-top: 15px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+.login-form button:hover {
+  background-color: #686868;
+}
+
+input {
+  width: 450px;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  background: none;
+  border-radius: 5px;
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+input:focus {
+  outline: none;
+}
+input:nth-child(1) {
+  margin-top: 18px;
+}
+
+body {
+  overflow-y: visible;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-family: "poppins", sans-serif;
+  max-width: 100%;
+}
+
+nav {
+  position: fixed;
+  z-index: 2;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  max-width: 100%;
+  position: relative;
+  padding: 1rem;
+}
+
+.snail-shape img {
+  position: absolute;
+  max-width: 1300px;
+  height: auto;
+  z-index: -5;
+  right: -25%;
+  top: -36%;
+}
+
+.laptop-bg {
+  position: relative;
+  width: 100%;
+  max-width: 1500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-top: 8rem;
+}
+.laptop-bg img {
+  width: 100%;
+  overflow: hidden;
+  height: auto;
+  display: block;
+}
+
+.bg-screen {
+  position: absolute;
+  width: 74%;
+  height: 73%;
+  bottom: 26%;
+  left: 50%;
+  transform: translateX(-50%);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(20px);
+  pointer-events: none;
+  z-index: -1;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.laptops-universe {
+  position: absolute;
+  top: 15%;
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  z-index: 2;
+  padding: 2rem;
+}
+.laptops-universe h1 {
+  font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+  color: #000000;
+  margin-bottom: 1.5rem;
+}
+.laptops-universe p {
+  font-size: clamp(1rem, 2.2vw, 1.3rem);
+  color: #000000;
+  margin-top: 1rem;
+  line-height: 1.6;
+}
+.laptops-universe #last-par {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: #000000;
+  margin-top: 2rem;
+}
+.laptops-universe #last-par span {
+  font-weight: 700;
+  color: #000000;
+}
+
+.explore-button {
+  background-color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  border: none;
+  cursor: pointer;
+  margin-top: 4rem;
+  transition: all 0.3s ease-in-out;
+  width: 200px;
+  padding: 10px;
+}
+.explore-button h1 {
+  color: #ffffff !important;
+  margin: 0;
+  font-size: 26px;
+}
+.explore-button .icon {
+  margin-right: 15px;
+  color: #ffffff;
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+}
+.explore-button:hover {
+  background-color: #0145ff !important;
+  transform: scale(1.02);
+}
+.explore-button:hover h1,
+.explore-button:hover .icon {
+  color: #ffffff;
+}
+
+.laptops-cards button {
+  height: 12% !important;
+  color: black;
+  margin-top: 10px !important;
+  margin: 0 !important;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+}
+.laptops-cards button:hover {
+  color: white !important;
+  background-color: #0145ff !important;
+}
+
+.popup-buttons button {
+  width: 100% !important;
+  height: 75px !important;
+}
+
+/* Optional: Responsive fallback for very small screens */
+@media (max-width: 768px) {
+  .bg-screen {
+    width: 85%;
+    height: 40%;
+    top: 25%;
+  }
+  .laptops-universe {
+    width: 90%;
+    top: 25%;
+  }
+  .explore-button {
+    width: 50%;
+  }
+}
+@media (max-width: 1296px) {
+  .snail-shape img {
+    top: -40%;
+    right: -40%;
+  }
+  .laptop-bg {
+    top: -1%;
+  }
+  .laptops-universe {
+    top: clamp(8%, 2.5vw, 10%);
+  }
+  .laptops-universe h1 {
+    font-size: 2rem;
+  }
+  .laptops-universe p {
+    font-size: 1.2rem;
+  }
+  .laptops-universe span {
+    font-size: 1rem;
+  }
+  .laptops-universe .explore-button {
+    width: 200px;
+  }
+  .laptops-universe .explore-button h1 {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 1100px) {
+  .snail-shape img {
+    top: -70%;
+    right: -40%;
+  }
+  .laptop-bg {
+    top: -10%;
+  }
+  .laptops-universe {
+    top: 7%;
+  }
+  .laptops-universe h1 {
+    font-size: 1.6rem;
+  }
+  .laptops-universe p {
+    font-size: 1rem;
+  }
+  .laptops-universe span {
+    font-size: 0.8rem;
+  }
+  .laptops-universe .explore-button h1 {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 1000px) {
+  .snail-shape img {
+    top: -70%;
+    right: -60%;
+  }
+  .laptops-universe {
+    top: 2%;
+  }
+}/*# sourceMappingURL=laptops.css.map */

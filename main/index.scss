@@ -1,0 +1,865 @@
+@import './dark-mode.css';
+@import './pop-up-modal.css';
+
+// 1. Variables
+$primary-font: 'poppins';
+$primary-color: 'black';
+$secondary-color: 'white';
+
+// 2. Global Styles (Reset & Body)
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+img {
+  user-select: none;
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 54, 54, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    z-index: 5;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    .cancel-btn {
+        position: absolute;
+        top: 20px;
+        right: 30px;
+        font-size: 28px;
+        color: white;
+        cursor: pointer;
+        transition: transform 0.3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease-out;
+        }
+    }
+}
+
+.menu-items {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    text-align: center;
+
+    div {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        font-size: 16px;
+        padding: 10px;
+        cursor: pointer;
+        transition: transform 0.3s ease-out;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: transform 0.3s ease-out;
+        }
+
+        .side {
+           &:not(:nth-of-type(1)) {
+                margin-left: 10px;// Hides all except the third one
+                
+            }
+
+            .side {
+                color: white;
+                text-decoration: none;
+            }
+            
+        }
+
+        .dropdown {
+            display: none;
+            margin-left: 40px;
+            flex-direction: column;
+        }
+
+        .dropdown-item {
+            cursor: pointer;
+            padding: 5px 0;
+        }
+    }
+}
+
+// ✅ Correctly scoped OUTSIDE to apply on toggle
+.products-menu.active .dropdown {
+    display: flex;
+}
+
+.products-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    
+    &:hover {
+        transform: none !important;
+      }
+
+    .products-toggle {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      width: 100%;
+      margin-right: 20px;
+      
+      
+      
+    }
+  
+    .dropdown {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 10px;
+      width: 100%;
+      gap: 8px;
+
+      &:hover {
+        transform: none !important;
+      }
+  
+      .dropdown-item {
+        padding: 5px 0;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease-out;
+        margin-left: 14px;
+
+        &:hover {
+            transform: scale(1.2);
+            transition: all 0.3s ease-out;
+          }
+      }
+    }
+  
+    &.active .dropdown {
+      display: flex;
+    }
+  }
+  
+
+
+
+
+/* Preloader wrapper */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+  
+  #logo-preloader {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .logo-stroke {
+    fill: none;
+    stroke: #000;
+    stroke-width: 6;
+    stroke-miterlimit: 10;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLogo 4s ease forwards;
+  }
+
+  .logo-stroke {
+    transition: fill 0.5s ease 2s;
+    fill: transparent;
+  }
+  .logo-stroke.filled {
+    fill: #000;
+  }
+  
+  @keyframes drawLogo {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+
+body {
+    font-family: $primary-font;
+    height: 100%;
+    width: 100%;
+   
+    
+}
+
+//First Page Animation
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+// 3. Body Page
+.first-page {
+    
+    animation: fadeInUp 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+    height: 120vh;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Hide menu by default */
+  .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: rgb(0, 0, 0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    min-width: 160px;
+    border-radius: 6px;
+    z-index: 1000;
+  }
+  
+  /* Dropdown items */
+  .dropdown-menu a {
+    display: block;
+    padding: 10px 15px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: normal;
+    font-family: 'poppins', sans-serif;
+  }
+  
+  /* Hover effect for items */
+  .dropdown-menu a:hover {
+    background-color: #616161;
+  }
+  
+  /* Show menu on hover */
+  .dropdown:hover .dropdown-menu {
+    display: block;
+  }
+
+// 4. Main Box (Navigation Bar)
+.main-box {
+    display: flex;
+    height: 10vh;
+    width: 100vw;
+    justify-content: space-between;
+    backdrop-filter: blur(5px); /* Applies the glass blur effect */
+    -webkit-backdrop-filter: blur(5px); /* For Safari support */
+    padding: .5rem;
+    margin-right: 2rem;
+    margin-left: 2rem;
+    align-items: center;
+    
+}
+
+// 5. Left Section (Logo & Icons)
+.left-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 1rem;
+    margin-top: 5px;
+    
+    .wafi-logo{
+        width: clamp(50px, 12vw, 95px); // Responsive width
+        height: clamp(50px, 12vw, 95px); // Responsive height
+        margin-right: 1.5rem;
+        
+        
+        &:hover {
+            transform: scale(1.2); // Scale effect on hover
+            transition: transform 0.3s ease-out; // Smooth transition
+            cursor: pointer;
+        }
+    }
+    
+
+    h1 {
+  margin-right: 2rem;
+  font-size: clamp(1.5rem, 2.5vw, 1.6rem);
+  margin-top: 5px;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease-out;
+
+  .cart-badge {
+    position: absolute;
+    top: -6px;
+    right: -10px;
+    width: 18px;
+    height: 18px;
+    background-color: rgb(194, 12, 12);
+    border-radius: 70%;
+    color: white;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    display: none; // Hide by default
+  }
+
+  &:hover {
+    transform: scale(1.2);
+  }
+}
+
+
+
+   
+}
+
+// 6. Right Section (Navigation Links)
+.right-section {
+    display: flex;
+    padding: 2px;
+    align-items: center;
+    justify-content: center;
+    margin-right: clamp(2rem, 12vw, 5.5rem); // Makes margin responsive
+    margin-right: 6rem;
+
+    
+   
+
+    h1 {
+        margin-right: clamp(1rem, 5vw, 4rem); // Makes margin responsive
+        font-size: clamp(1rem, 1.5vw, 1.2rem); // Even smaller responsive font size
+        font-weight: 500;
+        transition: all;
+
+        
+
+        &:hover{
+            cursor: pointer;
+            transform: scale(1.2); // Scale effect on hover
+            transition: transform 0.3s ease-out; // Smooth transition
+        }
+
+
+        &:not(:nth-of-type(5)) {
+            @media (max-width: 1340px)  {
+                display: none; // Hides all except the fifth one
+            }
+        }
+    }
+
+
+   
+
+
+    .two-bars-menu, .two-bars {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 12px;
+        width: auto;
+        transition: transform 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
+
+        &:hover {
+            cursor: pointer;
+            transform: scale(1.2);
+        }
+    }
+
+    .first-bar, .second-bar {
+        height: 3px;
+        width: 100px;
+        background-color: black;
+    }
+
+    .two-bars-menu {
+        display: none;
+    }
+    
+
+    
+
+
+    @media (max-width: 1340px)  {
+
+        .two-bars-menu {
+            display: flex;
+        }
+        
+        .first-bar, .second-bar {
+            width: 80px; // Adjusted width for smaller screens
+        } 
+    }
+}
+
+// 7. Hero Section (Main Visual Section)
+.hero-section {
+    height: 90vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
+    
+
+    @media (max-width: 1340px)  {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .wafi-title {
+        font-size: clamp(2.5rem, 3vw, 4rem); // Responsive font size
+        font-weight: 400;
+        color: $primary-color;
+        
+        span {
+            font-weight: 800;
+        }
+    }
+
+   
+        .background-slope {
+
+           
+            
+            img {
+                width: 1200px;
+                height: auto;
+                position: absolute;
+                top: -20%;
+                left: 50%;
+                z-index: -1;
+               
+                
+            }
+        
+        }
+      
+
+    .lap-img {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 70%;
+        position: relative;
+
+        @media (max-width: 1340px)  {
+            display: none;
+        }
+
+        .background-screen {
+            position: absolute;
+            top: 1%;
+            left: 30%;
+            width: 60%;
+            height: 75%;
+            z-index: -1; /* behind the image */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            pointer-events: none; /* so clicks pass through */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        img {
+            width: clamp(200px, 50vw, 1200px); /* Makes the image responsive */
+            height: auto;
+            display: block;
+            user-select: none;
+            pointer-events: none;
+        }
+    }
+
+    .search-bar {
+        display: flex;
+        margin-top: 2rem;
+
+        input {
+            font-size: clamp(1rem, 2vw, 1.5rem); // Responsive font size
+            font-family: $primary-font, sans-serif;
+            font-weight: 200;
+            width: 80%;
+            height: 4rem;
+            border: 1px solid rgb(61, 61, 61);
+            padding-left: 1rem;
+            background: none;
+
+            &:focus {
+                outline: none;
+                border: 1px solid black;
+            }
+        }
+
+        button {
+            width: 20%;
+            border: none;
+            cursor: pointer;
+            font-size: 32px;
+            color: white;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            &:hover {
+                background-color: #858585; /* Darker shade on hover */
+                transition: background-color 0.3s ease; /* Smooth hover animation */
+            }
+        }
+
+    }
+
+}
+
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+
+// 6. Second Page (Laptop Section)
+
+.second-page  {
+    width: 100%;
+    min-height: 100vh;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+// 7. Laptop Section Title
+.laptops-title, .accesories-title {
+    font-size: clamp(.8rem, 12vw, 1.2rem); // Responsive font size
+    font-weight: 400;
+    color: $primary-color;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem;
+
+    .two-bars {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        height: 12px;
+        width: 30px;
+        margin-left: 25px;
+
+        .first-bar, .second-bar {
+            height: 4px;
+            width: 60px;
+            background-color: black;
+        }
+    
+        
+    }
+}
+
+// 8. Laptop Cards Section
+
+.laptops-cards, .accessories-cards {
+  
+   
+   
+    display: flex;
+    width: 100%;
+    height: 85%;
+    justify-content: space-between;
+    padding: 4rem;
+    gap: 14px;
+    margin-top: 6rem;
+    align-items: center; 
+    animation: fade 5s ease-in; /* Animation for fade-in effect */
+    animation-timeline: view();
+    animation-range: entry 0 cover 40%;
+
+    @media screen and (max-width: 1100px)  {
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 25px;
+        padding: 30px;
+        height: 100%;
+        animation: fade 2s linear; /* Animation for fade-in effect */
+        animation-timeline: view();
+        animation-range: entry 0 cover 20%;
+        
+    }
+
+    div {
+        width: 405px;
+        height: clamp(200px, 25vw, 595px); // Responsive width
+        border-radius: 1rem;
+        display: flex; 
+        flex-direction: column; 
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+        border: rgb(168, 168, 168) 1.5px solid;
+        background: none;
+        font-family: 'poppins', sans-serif;
+        text-decoration: none;
+        color: black;
+        transition: all 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
+        
+        &:hover {
+            transform: scale(1.05); /* Scale effect on hover */
+            transition: transform 0.3s ease-out; /* Smooth transition */
+            cursor: pointer;
+        }
+
+
+        @media screen and (max-width: 1100px)  {
+            
+            width: 350px;
+            height: 400px;
+            animation: fade 5s ease-in; /* Animation for fade-in effect */
+            
+            
+        }
+       
+
+       
+
+
+        img {
+            width: 75%;
+            height: auto;
+            border-radius: 1rem;
+            margin-top: -6rem;
+
+            @media screen and (max-width: 1100px)  {
+                width: 250px;
+                height: auto;       
+                margin-top: -2rem;         
+                
+            }
+
+            
+        }
+
+        .laptop-name, .acc-name {
+            font-size: clamp(1rem, 2vw, 1.5rem); // Adjusted for better responsiveness
+            width: 65%; // Responsive width
+            font-weight: 800;
+            color: $primary-color;
+            margin-top: -2rem;
+
+        
+                    
+            @media screen and (max-width: 1540px)  {
+                
+                margin-top: -2rem; // Adjusted for better responsiveness
+                width: 80%; // Responsive width
+                font-size: 18px;
+
+
+            }
+            
+        }
+
+       
+        .laptop-price, .acc-price {
+            font-size: clamp(.6rem, 2vw, 1.5rem); // Responsive font size
+            width: 80%;
+            font-weight: 400;
+            color: $primary-color;
+
+            @media screen and (max-width: 1140px)  {
+                font-size: 1.2rem;
+            
+                
+            }
+        }
+
+        .color-circles{
+            width: 60%;
+            height: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            border: none;   
+            
+            @media screen and (max-width: 1100px)   {
+                width: 60%;
+                
+                
+            }
+
+            
+
+
+            h1 {
+                font-size: clamp(1rem, 1.5vw, 1.5rem); // Responsive font size
+                font-weight: 800;
+                color: $primary-color;
+                margin-left: 1rem;
+                margin-top: 10px;
+                
+            }
+
+            .circles{
+                display: flex;
+                flex-direction: row ;
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+                height: auto;
+                border: none;
+                margin-top: 12px;
+
+                div {
+                    height: 12px; // Responsive height
+                    width: 12px; // Responsive width
+                    border-radius: 50%;
+                    margin-left: 5px;
+                    border: none;
+                   transition: transform 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
+                    cursor: pointer;
+                   
+
+                    &:hover {
+                        transform: scale(1.5); // Scale effect on hover
+                        transition: transform 0.3s ease-out; // Smooth transition
+                    }
+                }
+
+                .circle-1 {
+                    background-color: rgb(0, 0, 0); /* Black color */
+                }
+                .circle-2 {
+                    background-color: rgb(255, 0, 0); /* Red color */
+                }
+                .circle-3 {
+                    background-color: rgb(255, 255, 255); /* Red color */
+                    border: 1px solid black;
+                }
+            }
+          
+           
+        }
+
+        .laptop-color, .acc-color {
+            font-size: clamp(1rem, 2vw, 1.5rem); // Responsive font size
+            width: 80%;
+            font-weight: 800;
+            color: $primary-color;
+            align-items: center;
+            justify-content: center;
+        }
+
+        button {
+            width: 100%;
+            font-family: 'poppins', sans-serif;
+            height: 12%;
+            border-bottom-right-radius: 1rem;
+            border-bottom-left-radius: 1rem;
+            border: 1.5px solid rgb(114, 114, 114);
+            font-size: clamp(.8rem, 1vw, 1.2rem); // Responsive font size
+            font-weight: 600;
+            background: none;
+            border-bottom: none;
+            border-right: none;
+            border-left: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth hover animation */
+            
+            &:hover {
+                background-color: #909090; /* Darker shade on hover */
+                color: white;
+                transition: background-color 0.3s ease; /* Smooth hover animation */
+
+            }
+        }
+        
+    }
+}
+
+
+
+// Third page 
+
+.third-page {
+    width: 100%;
+    min-height: 100vh;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+//Mobile Version 
+
+@media (max-width: 900px) {
+
+
+}
+
