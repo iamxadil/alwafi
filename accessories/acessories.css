@@ -506,7 +506,7 @@ body {
   height: 85%;
   justify-content: space-between;
   padding: 4rem;
-  gap: 18px;
+  gap: 14px;
   margin-top: 6rem;
   align-items: center;
   animation: fade 5s ease-in; /* Animation for fade-in effect */
@@ -681,6 +681,11 @@ body {
   min-height: 100vh;
 }
 
+@media (max-width: 900px) {
+  .first-page, .laptops-cards, .accessories-cards, .second-page, .third-page {
+    display: none;
+  }
+}
 body {
   overflow-x: hidden;
 }
