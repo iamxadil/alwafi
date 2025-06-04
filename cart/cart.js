@@ -1,4 +1,7 @@
 
+
+import '../main/index.js';
+
 function renderCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   const container = document.getElementById("cart-items");
@@ -6,8 +9,9 @@ function renderCart() {
   container.innerHTML = "";
 
   if (cart.length === 0) {
-    container.innerHTML = `<p style="grid-column: 3; padding: 2rem 0;">Your cart is empty.</p>`;
+    container.innerHTML = `<p class="cart-empty" style="grid-column: 3; padding: 2rem 0;">Your cart is empty.</p>`;
     if (clearButton) clearButton.style.display = "none";
+    applyDarkMode();
     return;
   }
 
@@ -35,6 +39,7 @@ function renderCart() {
   });
 
   setEventListeners();
+  applyDarkMode();
 }
 
 function setEventListeners() {
@@ -63,6 +68,30 @@ function updateQuantity(index, delta) {
   item.quantity = Math.max(1, (item.quantity || 1) + delta);
   localStorage.setItem("cart", JSON.stringify(cart));
   renderCart();
+}
+
+function applyDarkMode() {
+  const isDark = localStorage.getItem("darkMode") === "true";
+  const body = document.body;
+
+  if (isDark) {
+    body.classList.add("dark-mode-style");
+
+    document.querySelectorAll(
+      '.cart-item, .name, .price, .quantity-controls, .remove-btn, .cart-empty, .cart-header-row div, .increase, .decrease'
+    ).forEach(el => el.classList.add("dark-text"));
+
+    document.querySelectorAll('.payment-btn, #clear-cart').forEach(el => el.classList.add("dark-btn"));
+
+  } else {
+    body.classList.remove("dark-mode-style");
+
+    document.querySelectorAll(
+      '.cart-item, .name, .price, .quantity-controls, .remove-btn, .cart-empty, .cart-header-row div, .increase, .decrease'
+    ).forEach(el => el.classList.remove("dark-text"));
+
+    document.querySelectorAll('.payment-btn, #clear-cart').forEach(el => el.classList.remove("dark-btn"));
+  }
 }
 
 // Handle clear cart button

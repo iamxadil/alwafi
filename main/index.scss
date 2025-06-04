@@ -3,9 +3,9 @@
 
 
 // 1. Variables
-$primary-font: 'poppins';
-$primary-color: 'black';
-$secondary-color: 'white';
+$primary-font: 'Poppins';
+$primary-color: black;
+$secondary-color: white;
 
 // 2. Global Styles (Reset & Body)
 * {
@@ -314,6 +314,7 @@ body {
         width: clamp(50px, 12vw, 95px); // Responsive width
         height: clamp(50px, 12vw, 95px); // Responsive height
         margin-right: 1.5rem;
+        transition: all 0.3s ease-out;
         
         
         &:hover {
@@ -850,7 +851,8 @@ body {
 
 //Mobile Version 
 
-.mob-navigation {
+
+.mob-navigation, .mob-search-container {
     display: none;
 }
 
@@ -896,6 +898,7 @@ body {
     height: 10vh;
     width: 100%;
     align-items: center;
+    overflow: hidden;
     
 }
 
@@ -929,7 +932,7 @@ body {
         }
     }
 
-    .dark-mode-icon {
+    .dark-mode {
         margin-left: 12px;
     }
 
@@ -938,14 +941,13 @@ body {
 
 .mob-search-container {
     width: 100%;
-    height: 30vh;
+    height: 25vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    overflow: hidden;
+    margin-top: 2rem;
     
     .head-title {
        display: flex;
@@ -953,7 +955,7 @@ body {
         justify-content: space-between;
         height: 65px;
         margin-left: 3rem;
-        font-size: 14px;
+        font-size: clamp(12px, 2.5vw, 18px);
         width: 100%;
         
     }
@@ -1003,7 +1005,7 @@ body {
 
 .filter-button {
   width: 48px;
-  height: 45px;
+  height: 46px;
   border-radius: 8px;
   border: 1px solid #000;
   display: flex;
@@ -1024,9 +1026,6 @@ body {
   font-size: 1.2rem;
   color: #333;
 }
-
-
-
 
 }
 

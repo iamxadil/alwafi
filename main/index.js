@@ -2,16 +2,33 @@
 
 const homeButton = document.querySelector('.home-button');
 const sideMenu = document.querySelector('.side-menu');
-const twoBars = document.querySelector('.two-bars-menu');
+const twoBars = document.querySelectorAll('.two-bars-menu');
 const cancelButton = document.querySelector('.cancel-btn');
-const texts = document.querySelectorAll('h1, a, .bi-person, p, span');
+const texts = document.querySelectorAll('h1, a, .bi-person, p, span, .name, .price, .cart-item, .quantity-controls, .remove-btn, .bi ');
 const allButtons = document.querySelectorAll('button');
 const allInputs = document.querySelectorAll('input');
 const pageBody = document.querySelector('body');
 const SearchButton = document.querySelector('.search-button');
 const theTwoBars = document.querySelectorAll('.first-bar, .second-bar');
 const wafiLogo = document.querySelector('.wafi-logo');
-const darkModeButton = document.querySelector('.dark-mode');
+const darkModeButton = document.querySelectorAll('.dark-mode'); // SELECT ALL
+
+// Apply dark mode preloader background + SVG logo color early
+(function applyPreloaderDarkBackground() {
+  const isDark = localStorage.getItem('darkMode') === 'true';
+  const preloader = document.getElementById('preloader');
+
+  if (preloader) {
+    preloader.style.backgroundColor = isDark ? '#121212' : '#ffffff';
+
+    // Change stroke/fill color of paths in SVG
+    const svgPaths = preloader.querySelectorAll('.logo-stroke');
+    svgPaths.forEach(path => {
+      path.style.stroke = isDark ? 'white' : 'black';
+      path.style.fill = 'none';
+    });
+  }
+})();
 
 // Preloader Animation
 function runPreloaderAnimation() {
@@ -27,39 +44,48 @@ function runPreloaderAnimation() {
 
       setTimeout(() => {
         preloader.style.display = "none";
-      }, 500);
-    }, 2000);
+      }, 200);
+    }, 1500);
   });
 }
 
 runPreloaderAnimation();
 
-// Side menu toggle
-if (twoBars && sideMenu && cancelButton) {
-  twoBars.addEventListener('click', () => {
-    sideMenu.style.display = 'flex';
-    sideMenu.style.opacity = '0';
-    sideMenu.style.transition = 'opacity 0.5s ease';
-    setTimeout(() => {
-      sideMenu.style.opacity = '1';
-    }, 10);
-  });
+// Handle side menu toggling
+twoBars.forEach((bar) => {
+  if (sideMenu && cancelButton) {
+    bar.addEventListener('click', () => {
+      sideMenu.style.display = 'flex';
+      sideMenu.style.opacity = '0';
+      sideMenu.style.transition = 'opacity 0.5s ease';
+      console.log('clicked');
+      setTimeout(() => {
+        sideMenu.style.opacity = '1';
+      }, 10);
+    });
 
-  cancelButton.addEventListener('click', () => {
-    sideMenu.style.transition = 'opacity 0.5s ease';
-    sideMenu.style.opacity = '0';
-    setTimeout(() => {
-      sideMenu.style.display = 'none';
-    }, 500);
-  });
-}
+    cancelButton.addEventListener('click', () => {
+      sideMenu.style.transition = 'opacity 0.5s ease';
+      sideMenu.style.opacity = '0';
+      setTimeout(() => {
+        sideMenu.style.display = 'none';
+      }, 500);
+    });
+  }
+});
+
 
 const productsToggle = document.querySelector('.products-toggle');
 if (productsToggle) {
   productsToggle.addEventListener('click', () => {
-    document.querySelector('.products-menu').classList.toggle('active');
+    const menu = document.querySelector('.products-menu');
+    if (menu) {
+      menu.classList.toggle('active');
+    }
   });
 }
+
+
 
 // Load dark mode from localStorage
 function loadDarkModePreference() {
@@ -80,23 +106,24 @@ function loadDarkModePreference() {
   }
 }
 
-// Dark Mode Toggle
-if (darkModeButton) {
-  darkModeButton.addEventListener('click', () => {
-    const isDark = pageBody.classList.toggle('dark-mode-style');
+// ✅ FIXED: Dark Mode Toggle for multiple buttons (desktop + mobile)
+if (darkModeButton.length > 0) {
+  darkModeButton.forEach(button => {
+    button.addEventListener('click', () => {
+      const isDark = pageBody.classList.toggle('dark-mode-style');
+      texts.forEach(text => text.classList.toggle('dark-text'));
+      allButtons.forEach(button => button.classList.toggle('dark-button'));
+      allInputs.forEach(input => input.classList.toggle('dark-button'));
+      theTwoBars.forEach(bar => bar.classList.toggle('dark-bars'));
+      SearchButton.classList.toggle('dark-search-button');
 
-    texts.forEach(text => text.classList.toggle('dark-text'));
-    allButtons.forEach(button => button.classList.toggle('dark-button'));
-    allInputs.forEach(input => input.classList.toggle('dark-button'));
-    theTwoBars.forEach(bar => bar.classList.toggle('dark-bars'));
-    SearchButton.classList.toggle('dark-search-button');
+      homeButton.style.color = isDark ? 'white' : 'black';
+      wafiLogo.src = isDark
+        ? '../Assests/Icons/wafi-logo-outline-white.svg'
+        : '../Assests/Icons/wafi-logo-outline.svg';
 
-    homeButton.style.color = isDark ? 'white' : 'black';
-    wafiLogo.src = isDark
-      ? '../Assests/Icons/wafi-logo-outline-white.svg'
-      : '../Assests/Icons/wafi-logo-outline.svg';
-
-    localStorage.setItem('darkMode', isDark);
+      localStorage.setItem('darkMode', isDark);
+    });
   });
 }
 
@@ -127,7 +154,6 @@ function setupAddToCartButtons() {
       localStorage.setItem("cart", JSON.stringify(cart));
       updateCartCount();
 
-      // Show popup after adding item to cart
       const cartPopup = document.getElementById("cart-popup");
       cartPopup.querySelector('.popup-content').innerHTML = `
         <p>Item added to cart:</p>
@@ -142,7 +168,6 @@ function setupAddToCartButtons() {
         </div>
       `;
 
-      // Re-attach event listener for continue shopping button
       document.getElementById("continue-shopping").addEventListener("click", () => {
         cartPopup.style.display = "none";
       });
@@ -169,7 +194,6 @@ function updateCartCount() {
 }
 
 // Initialize on DOMContentLoaded
-
 document.addEventListener("DOMContentLoaded", function () {
   loadDarkModePreference();
   updateCartCount();
@@ -197,13 +221,18 @@ document.querySelectorAll('.product-card').forEach(card => {
       form
     };
 
-    // Save data to localStorage
     localStorage.setItem('selectedProduct', JSON.stringify(productData));
-
-    // Redirect to product page
     window.location.href = '../product/product.html';
   });
 });
 
 // Export for modules
-export { wafiLogo, pageBody, darkModeButton, runPreloaderAnimation, SearchButton, setupAddToCartButtons, updateCartCount };
+export {
+  wafiLogo,
+  pageBody,
+  darkModeButton,
+  runPreloaderAnimation,
+  SearchButton,
+  setupAddToCartButtons,
+  updateCartCount
+};
