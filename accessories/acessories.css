@@ -671,6 +671,7 @@ body {
   border-left: none;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth hover animation */
+  z-index: 10000;
 }
 .laptops-cards div button:hover, .accessories-cards div button:hover {
   background-color: #909090; /* Darker shade on hover */
