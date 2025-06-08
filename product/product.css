@@ -2,19 +2,20 @@
 .product-container {
   display: flex;
   align-items: center;
-  position: absolute;
+  position: relative;
   justify-content: space-between;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, 0);
   width: 1000px;
   flex-wrap: wrap;
+  height: 90vh;
 }
 
 .background-slope img {
   position: absolute;
   width: 1200px;
-  left: -20%;
+  left: 0;
   top: 50%;
   transform: translate(-50%, -50%);
   z-index: -1;
@@ -61,15 +62,12 @@
   width: 100px !important;
 }
 .gallery-box .thumbnail-row .thumbnail-wrapper:first-child {
-  border-left: none;
   border-right: 2px solid #000000;
 }
 .gallery-box .thumbnail-row .thumbnail-wrapper:nth-child(2) {
-  border-left: none;
   border-right: 2px solid #000000;
 }
 .gallery-box .thumbnail-row .thumbnail-wrapper:last-child {
-  border-left: none;
   border-right: none;
 }
 .gallery-box .thumbnail-row .thumbnail-wrapper:hover {
@@ -90,7 +88,7 @@
 
 .product-title {
   width: 500px;
-  font-size: 18px;
+  font-size: 16px;
   margin-left: 0.5rem;
 }
 
@@ -99,7 +97,7 @@
   flex-direction: column;
   align-items: center;
   width: 450px;
-  height: 380px;
+  height: 360px;
   border: 2px solid #000000;
   border-radius: 12px;
   font-size: 10px;
@@ -163,4 +161,148 @@
 .details-container .buttons button:nth-child(2) {
   border-right: none;
   border-bottom-right-radius: 12px;
+}
+
+.product-specs {
+  height: 100vh;
+  width: 100%;
+  z-index: -5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.specs-box {
+  width: 65%;
+  height: 80%;
+  border: 2px solid #000000;
+  margin-top: 16px;
+  border-radius: 26px;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .specs-box {
+    flex-direction: column;
+    height: auto;
+    width: 90%;
+  }
+}
+
+.product-image {
+  height: 100%;
+  width: 45%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-right: 2px solid #000;
+}
+.product-image h1 {
+  top: 5%;
+  position: absolute;
+}
+.product-image img {
+  width: 650px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: width ease-out 0.3s;
+  cursor: pointer;
+}
+.product-image img:hover {
+  width: 700px;
+  transition: width ease-in-out 0.3s;
+}
+@media (max-width: 900px) {
+  .product-image {
+    width: 100%;
+    border-right: none;
+    border-bottom: 2px solid #000;
+  }
+  .product-image img {
+    position: relative;
+    width: 90%;
+    top: unset;
+    left: unset;
+    transform: none;
+  }
+}
+
+.specs-details {
+  height: 100%;
+  flex: 1;
+  padding: 12px;
+}
+@media (max-width: 900px) {
+  .specs-details {
+    width: 100%;
+  }
+}
+
+.product-specs-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 320px;
+  margin-bottom: 6rem;
+}
+.product-specs-title i {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Responsive container for smaller screens */
+@media (max-width: 1100px) {
+  .product-container {
+    width: 95%;
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+    top: unset;
+    left: unset;
+    transform: none;
+  }
+  .gallery-box,
+  .main-image-wrapper,
+  .thumbnail-row {
+    width: 100% !important;
+  }
+  .product-title {
+    width: 100%;
+    text-align: center;
+  }
+  .details-container {
+    width: 90%;
+    height: auto;
+  }
+  .details-container .buttons {
+    flex-direction: column;
+  }
+  .details-container .buttons button {
+    width: 100%;
+    border-radius: 0;
+  }
+  .details-container .buttons button:nth-child(1) {
+    border-bottom-left-radius: 0;
+  }
+  .details-container .buttons button:nth-child(2) {
+    border-bottom-right-radius: 0;
+  }
+}
+@media (max-width: 600px) {
+  .thumbnail-wrapper img {
+    width: 80px !important;
+  }
+  .product-specs-title {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    text-align: center;
+  }
+  .specs-details {
+    padding: 1rem;
+  }
 }/*# sourceMappingURL=product.css.map */

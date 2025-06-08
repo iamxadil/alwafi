@@ -1,5 +1,5 @@
 import '../main/index.js';
-import { darkModeButton } from '../main/index.js';
+
 
 // Fetch product data from localStorage
 const productData = JSON.parse(localStorage.getItem('selectedProduct'));

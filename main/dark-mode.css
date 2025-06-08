@@ -12,7 +12,7 @@
 
 .dark-text {
     color: #ffffff !important; 
-    background: none;
+    background: none !important;
 }
 
 .dark-bars {
@@ -47,3 +47,18 @@ button {
 .dark-textarea {
     color: white;
 }
+
+.dark-label {
+    color: white !important;
+}
+
+.dark-border {
+    border: 1px solid white !important;
+    color: white !important;
+}
+
+option {
+ background-color: #000000;
+ color: white;
+}
+

@@ -1,5 +1,4 @@
 
-
 import '../main/index.js';
 
 function renderCart() {
@@ -99,5 +98,6 @@ document.getElementById("clear-cart")?.addEventListener("click", () => {
   localStorage.removeItem("cart");
   renderCart();
 });
+
 
 document.addEventListener("DOMContentLoaded", renderCart);

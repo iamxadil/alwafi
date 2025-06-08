@@ -1,27 +1,11 @@
 // File: login/login.js
 import '../main/index.js'
-import { wafiLogo, pageBody, darkModeButton } from '../main/index.js';
 const searchIcon = document.getElementById('search-icon');
 const navSearchInput = document.getElementById('nav-search-input');
 const navH1 = searchIcon.closest('h1');
 
 
 
-
-//Dark Mode Toggle
-darkModeButton.addEventListener('click', () => {
-
-    wafiLogo.src = pageBody.classList.contains('dark-mode-style') 
-    ? '../Assests/Icons/wafi-logo-outline-white.svg' 
-    : '../Assests/Icons/wafi-logo-outline.svg';
-
-    navSearchInput.classList.toggle('dark-input');
-
-   
- 
-
-
-});
 
 // Search input pop animation in nav
 

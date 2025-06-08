@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
+    
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="../login/login.css">
+    <link rel="stylesheet" href="register.css">
     <title>Awlafi Company</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <link rel="icon" type="image/x-icon" href="../Assests/Icons/wafi-logo-filled.svg">
     <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    
 </head>
 <body>
 
- <!---Preloader-->
+
+  <!---Preloader-->
     <div id="preloader">
         <svg id="logo-preloader" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
           <path class="logo-stroke" d="M280.5,291.49l21.72,38.32c3.51,6.23,12.29,6.23,15.97.16l63.39-106.18,25.55-44.39c3.51-6.23-.96-13.89-7.98-13.89h-45.83c-3.35,0-6.39,1.76-7.98,4.63l-30.98,53.65-33.85,58.6c-1.6,2.87-1.6,6.39,0,9.1Z"/>
@@ -94,6 +97,9 @@
                    
         </nav>
 
+
+
+
         <!---Main Components-->
 
         <div class="container">
@@ -105,9 +111,13 @@
             <div class="login-form">
 
                 <div class="text-header">
-                <h1>Login</h1>
+                <h1>Sign Up</h1>
                 </div>
                 <form action="login.php" method="POST">
+
+                    <div class="name-field">
+                        <input type="text" name="name" required placeholder="Name">
+                    </div>
 
                     <div class="email-field">
                         <input type="email" name="email" required placeholder="Email">
@@ -115,52 +125,14 @@
                     
                     <div class="password-field">
                         <input type="password" name="password" required placeholder="Password">
-                        <div class="password-options">
-                            <a style="color: #000;" href="#forgot-password-page"><h1>Forgot Password</h1></a>
-                           <div class="remember-pass">
-                            <h1>Remember Me</h1> 
-                            <input type="checkbox">
-                        </div> 
-                        </div>
                     </div>
                     
-                    <button type="submit">Login</button>
-                    <div class="account-register"><h1>Don't Have An Account? <span><a href="../Register/register.html">Sign Up Now.</a></span></h1></div>
+                    <button type="submit">Sign Up</button>
+                    
                 </form>
         </div>
         </div>
 
 
-        
-        <!----Mobile Version-->
-
-                <!-- Mobile Navigation Bar -->
-
-             <nav class="mob-navigation">
-                <div class="mob-left-section">
-                    <img src="../Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
-                    <i class="bi bi-handbag"></i>
-                    <i class="bi bi-moon dark-mode"></i>
-                </div>
-
-                <div class="mob-right-section">
-                     <div class="two-bars-menu">
-                      <div class="first-bar"></div>
-                      <div class="second-bar"></div>
-                    </div> <!-- Hamburger Icon -->
-                </div>
-             </nav>
-
-
-
-            
-
-
-
-
-        <script type="module" src="../login/login.js"></script>
-    
-        
-        
+    <script src="register.js" type="module"></script>
 </body>
-</html>
