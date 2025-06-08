@@ -2,7 +2,7 @@
 //Mobile Version 
 
 
-.mob-navigation, .mob-search-container, .slider-container, .discover-section {
+.mob-navigation, .mob-search-container, .slider-container, .discover-section, .most-popular-section {
     display: none;
  
 }
@@ -11,6 +11,11 @@
 
    .first-page, .laptops-cards, .accessories-cards, .second-page, .third-page, nav {
         display: none;
+    }
+
+
+    html {
+      overflow-x: hidden;
     }
 
     body {
@@ -103,6 +108,8 @@
     align-items: center;
     overflow: hidden;
     margin-top: 2rem;
+    overflow-x: hidden;
+
     
     .head-title {
        display: flex;
@@ -189,9 +196,11 @@
   gap: 2rem;
   overflow-x: auto;
   scroll-behavior: smooth;       // Smooth scroll when using scrollTo or clicking links
-  -webkit-overflow-scrolling: touch; // enables momentum scrolling on iOS devices
-  width: 100%;  // or your fixed width
-   margin-left: 3rem;
+  -webkit-overflow-scrolling: touch; 
+  width: 100%;  
+  padding-right: 1.5rem;
+  padding-left: 1.5rem;
+  
  
 
   /* Hide scrollbar for Webkit browsers */
@@ -216,6 +225,7 @@
   overflow: hidden;
   scroll-snap-align: start;
   
+  
   img {
     width: 140px; // Match the container width so images fit well
     cursor: pointer;
@@ -229,7 +239,7 @@
 
 
 
-.discover-section {
+.discover-section, .most-popular-section {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -239,7 +249,7 @@
   padding: 1.5rem;
 }
 
-.discover-title {
+.discover-title, .most-popular-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -289,7 +299,7 @@
     align-items: start;
     position: relative;
     width: 100%;
-
+    
     h1 {
       font-size: 24px;
     }
@@ -302,6 +312,11 @@
     }
 
 
+    .heart i.bi-suit-heart-fill {
+      color: red;
+      }
+
+
     .heart {
       position: absolute;
       top: 2%;
@@ -309,6 +324,8 @@
       transform: translate(-50%, -50%);
       transition: all ease-in-out 0.3s;
       cursor: pointer;
+
+      
 
       i {
 
@@ -325,6 +342,23 @@
     width: 125px;
   }
 }
+
+
+@media (max-width: 450px) {
+      .mob-item-details{
+
+        h1 { 
+          font-size: 18px !important;
+        }
+      }
+        .heart {
+          position: absolute;
+          top: -6% !important;
+          right: 1% !important;
+        }
+      }
+
+
 }
 
 

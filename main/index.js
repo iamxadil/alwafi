@@ -1,3 +1,5 @@
+
+
 // DOM Selectors
 const sideMenu = document.querySelector('.side-menu');
 const cancelButton = document.querySelector('.cancel-btn');
@@ -230,6 +232,77 @@ document.querySelectorAll('.product-card').forEach(card => {
     localStorage.setItem('selectedProduct', JSON.stringify(productData));
     window.location.href = '../product/product.html';
   });
+});
+
+// Fav Item Toggle
+document.querySelectorAll('.heart').forEach(heart => {
+  heart.addEventListener('click', () => {
+    const icon = heart.querySelector('i');
+    icon.classList.toggle('bi-suit-heart');
+    icon.classList.toggle('bi-suit-heart-fill');
+  });
+});
+
+// Search Input Handling and Filtering Products by Category, Name, or Company
+const searchInput = document.getElementById('products-search');
+const productsContainer = document.querySelector('.discover-section .mob-items-container');
+
+// Your full product list with category
+const fullProducts = [
+  { company: 'Asus', name: 'ROG STRIX G16', price: '2.000.000 IQD', img: 'Assests/Images/laptop-img.png', category: 'laptop' },
+  { company: 'Fantech', name: 'WH06 WIRELESS', price: '75.000 IQD', img: 'Assests/Images/Headphone.png', category: 'headphone' },
+  { company: 'Microsoft', name: 'XBOX JOYSTICK', price: '50.000 IQD', img: 'Assests/Images/Xbox-One-Controller.png', category: 'joystick' },
+  { company: 'Apple', name: 'MacBook Air', price: '3.000.000 IQD', img: 'Assests/Images/macbook-air.png', category: 'laptop' },
+  { company: 'Logitech', name: 'MX Master 3', price: '150.000 IQD', img: 'Assests/Images/mx-master3.png', category: 'mouse' },
+  // Add more products here...
+];
+
+// Create product card HTML
+function createProductCard(product) {
+  return `
+    <div class="mob-item-card cont-border">
+      <div class="mob-item-pic cont-border">
+        <img src="${product.img}" alt="${product.name}">
+      </div>
+      <div class="mob-item-details">
+        <p class="comp-name">${product.company}</p>
+        <h1 class="mob-item-name">${product.name}</h1>
+        <p class="mob-item-price">${product.price}</p>
+        <div class="heart">
+          <i class="bi bi-suit-heart"></i>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function renderProducts(products) {
+  productsContainer.innerHTML = '';
+  products.forEach(product => {
+    productsContainer.innerHTML += createProductCard(product);
+  });
+}
+
+
+// Initial render - only first 4 products
+renderProducts(fullProducts.slice(0, 4));
+
+// Search event
+searchInput.addEventListener('input', () => {
+  const query = searchInput.value.trim().toLowerCase();
+
+  if (query === '') {
+    // Show only first 4 products if input empty
+    renderProducts(fullProducts.slice(0, 4));
+  } else {
+    // Filter products by name, company, or category
+    const filteredProducts = fullProducts.filter(p =>
+      p.name.toLowerCase().includes(query) ||
+      p.company.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query)
+    );
+    renderProducts(filteredProducts);
+  }
 });
 
 // Init
