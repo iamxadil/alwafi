@@ -1,5 +1,4 @@
-
-import '../main/index.js';
+import '../main/index.js'
 
 function renderCart() {
   const cart = JSON.parse(localStorage.getItem("cart")) || [];

@@ -240,6 +240,11 @@ input:nth-child(1) {
     display: none;
   }
 }
+.accessories-title,
+.accessories-cards {
+  display: none;
+}
+
 body {
   overflow-y: visible;
   overflow-x: hidden;

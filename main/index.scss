@@ -15,6 +15,11 @@ $secondary-color: white;
 }
 
 
+html {
+    overflow-x: hidden;
+}
+
+
 a {
     text-decoration: none;
     color: white;
@@ -587,7 +592,8 @@ body {
 }
 
 // 7. Laptop Section Title
-.laptops-title, .accesories-title {
+.laptops-title, .accessories-title, .audios-title {
+    
     font-size: clamp(.8rem, 12vw, 1.2rem); // Responsive font size
     font-weight: 400;
     color: $primary-color;
@@ -619,7 +625,7 @@ body {
 
 // 8. Laptop Cards Section
 
-.laptops-cards, .accessories-cards {
+.laptops-cards, .accessories-cards, .audios-cards {
   
    
    
@@ -631,7 +637,7 @@ body {
     gap: 14px;
     margin-top: 6rem;
     align-items: center; 
-    animation: fade 5s ease-in; /* Animation for fade-in effect */
+    animation: fade 1.5s ease-in-out forwards;
     animation-timeline: view();
     animation-range: entry 0 cover 40%;
 

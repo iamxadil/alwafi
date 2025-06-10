@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html {
+  overflow-x: hidden;
+}
+
 a {
   text-decoration: none;
   color: white;
@@ -475,7 +479,7 @@ body {
   justify-content: space-around;
 }
 
-.laptops-title, .accesories-title {
+.laptops-title, .accessories-title, .audios-title {
   font-size: clamp(0.8rem, 12vw, 1.2rem);
   font-weight: 400;
   color: black;
@@ -486,7 +490,7 @@ body {
   justify-content: center;
   margin-top: 2rem;
 }
-.laptops-title .two-bars, .accesories-title .two-bars {
+.laptops-title .two-bars, .accessories-title .two-bars, .audios-title .two-bars {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -495,13 +499,13 @@ body {
   width: 30px;
   margin-left: 25px;
 }
-.laptops-title .two-bars .first-bar, .laptops-title .two-bars .second-bar, .accesories-title .two-bars .first-bar, .accesories-title .two-bars .second-bar {
+.laptops-title .two-bars .first-bar, .laptops-title .two-bars .second-bar, .accessories-title .two-bars .first-bar, .accessories-title .two-bars .second-bar, .audios-title .two-bars .first-bar, .audios-title .two-bars .second-bar {
   height: 4px;
   width: 60px;
   background-color: black;
 }
 
-.laptops-cards, .accessories-cards {
+.laptops-cards, .accessories-cards, .audios-cards {
   display: flex;
   width: 100%;
   height: 85%;
@@ -510,12 +514,12 @@ body {
   gap: 14px;
   margin-top: 6rem;
   align-items: center;
-  animation: fade 5s ease-in; /* Animation for fade-in effect */
+  animation: fade 1.5s ease-in-out forwards;
   animation-timeline: view();
   animation-range: entry 0 cover 40%;
 }
 @media screen and (max-width: 1100px) {
-  .laptops-cards, .accessories-cards {
+  .laptops-cards, .accessories-cards, .audios-cards {
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
@@ -527,7 +531,7 @@ body {
     animation-range: entry 0 cover 20%;
   }
 }
-.laptops-cards div, .accessories-cards div {
+.laptops-cards div, .accessories-cards div, .audios-cards div {
   width: 405px;
   height: clamp(200px, 25vw, 595px);
   border-radius: 1rem;
@@ -543,32 +547,32 @@ body {
   color: black;
   transition: all 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
 }
-.laptops-cards div:hover, .accessories-cards div:hover {
+.laptops-cards div:hover, .accessories-cards div:hover, .audios-cards div:hover {
   transform: scale(1.05); /* Scale effect on hover */
   transition: transform 0.3s ease-out; /* Smooth transition */
   cursor: pointer;
 }
 @media screen and (max-width: 1100px) {
-  .laptops-cards div, .accessories-cards div {
+  .laptops-cards div, .accessories-cards div, .audios-cards div {
     width: 350px;
     height: 400px;
     animation: fade 5s ease-in; /* Animation for fade-in effect */
   }
 }
-.laptops-cards div img, .accessories-cards div img {
+.laptops-cards div img, .accessories-cards div img, .audios-cards div img {
   width: 75%;
   height: auto;
   border-radius: 1rem;
   margin-top: -6rem;
 }
 @media screen and (max-width: 1100px) {
-  .laptops-cards div img, .accessories-cards div img {
+  .laptops-cards div img, .accessories-cards div img, .audios-cards div img {
     width: 250px;
     height: auto;
     margin-top: -2rem;
   }
 }
-.laptops-cards div .laptop-name, .laptops-cards div .acc-name, .accessories-cards div .laptop-name, .accessories-cards div .acc-name {
+.laptops-cards div .laptop-name, .laptops-cards div .acc-name, .accessories-cards div .laptop-name, .accessories-cards div .acc-name, .audios-cards div .laptop-name, .audios-cards div .acc-name {
   font-size: clamp(1rem, 2vw, 1.5rem);
   width: 65%;
   font-weight: 800;
@@ -576,24 +580,24 @@ body {
   margin-top: -2rem;
 }
 @media screen and (max-width: 1540px) {
-  .laptops-cards div .laptop-name, .laptops-cards div .acc-name, .accessories-cards div .laptop-name, .accessories-cards div .acc-name {
+  .laptops-cards div .laptop-name, .laptops-cards div .acc-name, .accessories-cards div .laptop-name, .accessories-cards div .acc-name, .audios-cards div .laptop-name, .audios-cards div .acc-name {
     margin-top: -2rem;
     width: 80%;
     font-size: 18px;
   }
 }
-.laptops-cards div .laptop-price, .laptops-cards div .acc-price, .accessories-cards div .laptop-price, .accessories-cards div .acc-price {
+.laptops-cards div .laptop-price, .laptops-cards div .acc-price, .accessories-cards div .laptop-price, .accessories-cards div .acc-price, .audios-cards div .laptop-price, .audios-cards div .acc-price {
   font-size: clamp(0.6rem, 2vw, 1.5rem);
   width: 80%;
   font-weight: 400;
   color: black;
 }
 @media screen and (max-width: 1140px) {
-  .laptops-cards div .laptop-price, .laptops-cards div .acc-price, .accessories-cards div .laptop-price, .accessories-cards div .acc-price {
+  .laptops-cards div .laptop-price, .laptops-cards div .acc-price, .accessories-cards div .laptop-price, .accessories-cards div .acc-price, .audios-cards div .laptop-price, .audios-cards div .acc-price {
     font-size: 1.2rem;
   }
 }
-.laptops-cards div .color-circles, .accessories-cards div .color-circles {
+.laptops-cards div .color-circles, .accessories-cards div .color-circles, .audios-cards div .color-circles {
   width: 60%;
   height: auto;
   display: flex;
@@ -603,18 +607,18 @@ body {
   border: none;
 }
 @media screen and (max-width: 1100px) {
-  .laptops-cards div .color-circles, .accessories-cards div .color-circles {
+  .laptops-cards div .color-circles, .accessories-cards div .color-circles, .audios-cards div .color-circles {
     width: 60%;
   }
 }
-.laptops-cards div .color-circles h1, .accessories-cards div .color-circles h1 {
+.laptops-cards div .color-circles h1, .accessories-cards div .color-circles h1, .audios-cards div .color-circles h1 {
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   font-weight: 800;
   color: black;
   margin-left: 1rem;
   margin-top: 10px;
 }
-.laptops-cards div .color-circles .circles, .accessories-cards div .color-circles .circles {
+.laptops-cards div .color-circles .circles, .accessories-cards div .color-circles .circles, .audios-cards div .color-circles .circles {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -624,7 +628,7 @@ body {
   border: none;
   margin-top: 12px;
 }
-.laptops-cards div .color-circles .circles div, .accessories-cards div .color-circles .circles div {
+.laptops-cards div .color-circles .circles div, .accessories-cards div .color-circles .circles div, .audios-cards div .color-circles .circles div {
   height: 12px;
   width: 12px;
   border-radius: 50%;
@@ -633,21 +637,21 @@ body {
   transition: transform 0.3s ease-in-out; /* Ensures smooth transition both on hover and when cursor leaves */
   cursor: pointer;
 }
-.laptops-cards div .color-circles .circles div:hover, .accessories-cards div .color-circles .circles div:hover {
+.laptops-cards div .color-circles .circles div:hover, .accessories-cards div .color-circles .circles div:hover, .audios-cards div .color-circles .circles div:hover {
   transform: scale(1.5);
   transition: transform 0.3s ease-out;
 }
-.laptops-cards div .color-circles .circles .circle-1, .accessories-cards div .color-circles .circles .circle-1 {
+.laptops-cards div .color-circles .circles .circle-1, .accessories-cards div .color-circles .circles .circle-1, .audios-cards div .color-circles .circles .circle-1 {
   background-color: rgb(0, 0, 0); /* Black color */
 }
-.laptops-cards div .color-circles .circles .circle-2, .accessories-cards div .color-circles .circles .circle-2 {
+.laptops-cards div .color-circles .circles .circle-2, .accessories-cards div .color-circles .circles .circle-2, .audios-cards div .color-circles .circles .circle-2 {
   background-color: rgb(255, 0, 0); /* Red color */
 }
-.laptops-cards div .color-circles .circles .circle-3, .accessories-cards div .color-circles .circles .circle-3 {
+.laptops-cards div .color-circles .circles .circle-3, .accessories-cards div .color-circles .circles .circle-3, .audios-cards div .color-circles .circles .circle-3 {
   background-color: rgb(255, 255, 255); /* Red color */
   border: 1px solid black;
 }
-.laptops-cards div .laptop-color, .laptops-cards div .acc-color, .accessories-cards div .laptop-color, .accessories-cards div .acc-color {
+.laptops-cards div .laptop-color, .laptops-cards div .acc-color, .accessories-cards div .laptop-color, .accessories-cards div .acc-color, .audios-cards div .laptop-color, .audios-cards div .acc-color {
   font-size: clamp(1rem, 2vw, 1.5rem);
   width: 80%;
   font-weight: 800;
@@ -655,7 +659,7 @@ body {
   align-items: center;
   justify-content: center;
 }
-.laptops-cards div button, .accessories-cards div button {
+.laptops-cards div button, .accessories-cards div button, .audios-cards div button {
   width: 100%;
   font-family: "poppins", sans-serif;
   height: 12%;
@@ -672,7 +676,7 @@ body {
   transition: background-color 0.3s ease; /* Smooth hover animation */
   z-index: 10000;
 }
-.laptops-cards div button:hover, .accessories-cards div button:hover {
+.laptops-cards div button:hover, .accessories-cards div button:hover, .audios-cards div button:hover {
   background-color: #909090; /* Darker shade on hover */
   color: white;
   transition: background-color 0.3s ease; /* Smooth hover animation */

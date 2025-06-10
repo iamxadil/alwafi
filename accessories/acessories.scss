@@ -1,7 +1,16 @@
-@import '../main/index.scss';
-@import '../laptops/laptops.css';
+@import '../main/index.css';
+@import '../login/login.css';
 
 
+
+.laptops-title, .laptops-cards {
+    display: none;
+}
+
+
+html {
+    overflow-x: hidden;
+}
 body {
    
      

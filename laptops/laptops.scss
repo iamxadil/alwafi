@@ -3,6 +3,13 @@
 @import '../main/dark-mode.css';
 @import '../main/pop-up-modal.css';
 
+
+
+.accessories-title,
+.accessories-cards {
+  display: none;
+}
+
 body {
   overflow-y: visible;
   overflow-x: hidden;
