@@ -1,7 +1,7 @@
 import '../main/index.js';
 import '../login/login.js';
 
-import { darkModeButton } from '../main/index.js';
+
 
 // Handle toggle on dark mode button click
 darkModeButton.addEventListener('click', () => {

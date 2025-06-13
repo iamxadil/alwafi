@@ -1,6 +1,6 @@
-@import '../main/mob.css';
-@import '../main/index.css';
 
+@import '../main/index.css';
+@import '../main/mob.css';
 
 .category {
     display: none;
@@ -13,14 +13,26 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-top: 2rem;
   width: 100%;
+  height: 100%;
   padding: 1.5rem;
+  margin-top: -4rem;
+  
+}
+
+.head-title { 
+
+
+  h1 {
+    font-size: 22px !important;
+  }
 
   
 }
 
-
+#category-title::first-letter {
+  text-transform: uppercase;
+}
 
 }
 

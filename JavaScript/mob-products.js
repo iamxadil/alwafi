@@ -1,8 +1,7 @@
 // mob-products.js
 import { applyDarkModeToPage } from './theme.js';
-
 const productsContainer = document.querySelector('.discover-section .mob-items-container');
-const searchInput = document.getElementById('products-search');
+
 
 // product list
 const fullProducts = [
@@ -20,18 +19,27 @@ function createProductCard(product) {
          data-price="${product.price}"
          data-brand="${product.company}"
          data-image="${product.img}">
+
       <div class="mob-item-pic cont-border">
         <img class="product-image" src="${product.img}" alt="${product.name}">
       </div>
+
       <div class="mob-item-details">
         <p class="comp-name">${product.company}</p>
         <h1 class="mob-item-name">${product.name}</h1>
         <p class="mob-item-price">${product.price}</p>
-        <div class="heart"><i class="bi bi-suit-heart"></i></div>
       </div>
+
+      <div class="interaction-buttons">
+        <div class="heart cont-border"><i class="bi bi-suit-heart"></i></div>
+        <div class="mob-add-to-cart cont-border"><i class="bi bi-plus"></i></div>
+      </div>
+
     </div>
   `;
 }
+
+
 
 function renderProducts(products) {
   if (!productsContainer) return;
@@ -54,17 +62,22 @@ function renderProducts(products) {
     });
   });
 
-  document.querySelectorAll('.heart').forEach(heart => {
-    heart.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const icon = heart.querySelector('i');
-      icon.classList.toggle('bi-suit-heart');
-      icon.classList.toggle('bi-suit-heart-fill');
+  }
+
+  function setupHeart() {
+    document.querySelectorAll('.heart').forEach(heart => {
+      heart.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = heart.querySelector('i');
+        icon.classList.toggle('bi-suit-heart');
+        icon.classList.toggle('bi-suit-heart-fill');
+      });
     });
-  });
-}
+  }
 
 function setupSearch() {
+  const searchInput = document.getElementById('products-search');
+  
   if (!searchInput) return;
   searchInput.addEventListener('input', () => {
     const query = searchInput.value.trim().toLowerCase();
@@ -77,15 +90,21 @@ function setupSearch() {
         );
 
     renderProducts(filtered);
+    setupHeart();
   });
 }
+
+
+
 
 function initProducts() {
   renderProducts(fullProducts.slice(0, 4));
   setupSearch();
+  setupHeart();
 }
 
 export {
   initProducts,
-  renderProducts
+  renderProducts,
+  setupHeart
 };

@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "name": "ROG STRIX G16",
+    "brand": "Asus",
+    "price": "2.000.000 IQD",
+    "image": "../Assests/Images/laptop-img.png",
+    "category": "laptops"
+  },
+  {
+    "id": 2,
+    "name": "MacBook Air",
+    "brand": "Apple",
+    "price": "3.000.000 IQD",
+    "image": "../Assests/Images/macbook-air.png",
+    "category": "laptops"
+  },
+  {
+    "id": 3,
+    "name": "WH06 WIRELESS",
+    "brand": "Fantech",
+    "price": "75.000 IQD",
+    "image": "../Assests/Images/Headphone.png",
+    "category": "headphones"
+  },
+  {
+    "id": 4,
+    "name": "AirPods Pro",
+    "brand": "Apple",
+    "price": "250.000 IQD",
+    "image": "../Assests/Images/airpods-pro.png",
+    "category": "headphones"
+  },
+  {
+    "id": 5,
+    "name": "XBOX JOYSTICK",
+    "brand": "Microsoft",
+    "price": "50.000 IQD",
+    "image": "../Assests/Images/Xbox-One-Controller.png",
+    "category": "joysticks"
+  },
+  {
+    "id": 6,
+    "name": "Logitech G502",
+    "brand": "Logitech",
+    "price": "40.000 IQD",
+    "image": "../Assests/Images/logitech-g502.png",
+    "category": "mice"
+  },
+  {
+    "id": 7,
+    "name": "Razer DeathAdder V2",
+    "brand": "Razer",
+    "price": "55.000 IQD",
+    "image": "../Assests/Images/razer-deathadder.png",
+    "category": "mice"
+  },
+  {
+    "id": 8,
+    "name": "Corsair K70",
+    "brand": "Corsair",
+    "price": "120.000 IQD",
+    "image": "../Assests/Images/corsair-k70.png",
+    "category": "keyboards"
+  },
+  {
+    "id": 9,
+    "name": "HyperX Alloy FPS",
+    "brand": "HyperX",
+    "price": "95.000 IQD",
+    "image": "../Assests/Images/hyperx-alloy-fps.png",
+    "category": "keyboards"
+  },
+  {
+    "id": 10,
+    "name": "TP-Link Archer AX6000",
+    "brand": "TP-Link",
+    "price": "200.000 IQD",
+    "image": "../Assests/Images/tplink-ax6000.png",
+    "category": "routers"
+  },
+  {
+    "id": 11,
+    "name": "Netgear Nighthawk AX12",
+    "brand": "Netgear",
+    "price": "250.000 IQD",
+    "image": "../Assests/Images/netgear-nighthawk.png",
+    "category": "routers"
+  },
+  {
+    "id": 12,
+    "name": "Dell OptiPlex 7070",
+    "brand": "Dell",
+    "price": "1.500.000 IQD",
+    "image": "../Assests/Images/dell-optiPlex.png",
+    "category": "computers"
+  },
+  {
+    "id": 13,
+    "name": "HP Pavilion Desktop",
+    "brand": "HP",
+    "price": "1.300.000 IQD",
+    "image": "../Assests/Images/hp-pavilion.png",
+    "category": "computers"
+  },
+  {
+    "id": 14,
+    "name": "Sony WH-1000XM4",
+    "brand": "Sony",
+    "price": "180.000 IQD",
+    "image": "../Assests/Images/sony-wh1000xm4.png",
+    "category": "headphones"
+  },
+  {
+    "id": 15,
+    "name": "Microsoft Surface",
+    "brand": "Microsoft",
+    "price": "2.500.000 IQD",
+    "image": "../Assests/Images/surface-laptop4.png",
+    "category": "laptops"
+  }
+]

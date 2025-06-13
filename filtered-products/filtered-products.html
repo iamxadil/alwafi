@@ -74,9 +74,48 @@
              </nav>
 
 
+
+
+             
+            <!-- Mobile Search Section -->
+             <div class="mob-search-container">
+                <div class="head-title">
+                    <h1>Our Inventory of <span id="category-title"></span> </h1>
+                    <p>Enjoy Your Journey.</p>
+                </div>
+
+                <div class="search-section">
+                     <div class="mob-input-wrapper">
+                    <i class="bi bi-search"></i>
+                    <input type="search" name="search" id="products-search" placeholder="Search For Your Product">
+                </div>
+                
+                    <!-- Filter Menu (initially hidden) -->
+                        <div class="filter-menu" style="display: none; margin-top: 10px;">
+                                    <!-- Condition Filter -->
+                                     <div class="filter-group">
+                                            <label><input type="checkbox" class="condition-filter" value="new"> New</label>
+                                                <label><input type="checkbox" class="condition-filter" value="used"> Used</label>
+                                                        </div>
+
+                                                    <!-- Price Filter -->
+                                          <div class="filter-group">
+                                             <label for="priceRange">Max Price: <span id="priceValue">3000000</span> IQD</label>
+                                          <input type="range" id="priceRange" min="10000" max="3000000" step="10000" value="3000000">
+                                  </div>
+                                 </div>
+
+                <div class="filter-button">
+                    <i class="bi bi-sliders"></i>
+                </div>
+                </div>
+             </div>
+
+
+
                                         <!-- Container for product cards -->
                         <div class="category">
-                                  <h2 id="category-title">Loading...</h2>
+                                  
                         </div>
 
   <script src="filtered-products.js" type="module"></script>

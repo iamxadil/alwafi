@@ -9,7 +9,7 @@ import { renderPCProducts } from '../JavaScript/pc-products.js';
 import { enableCategoryNavigation } from '../JavaScript/category.js';
 
 initProducts();
-renderPCProducts(); // Add this here
+renderPCProducts(); 
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,6 +36,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     loadDarkModePreference();
 });
+
+
+    document.querySelectorAll('.heart').forEach(heart => {
+      heart.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = heart.querySelector('i');
+        icon.classList.toggle('bi-suit-heart');
+        icon.classList.toggle('bi-suit-heart-fill');
+      });
+    });
+
+
+
 
 applyPreloaderDarkBackground();
 runPreloaderAnimation();
