@@ -1,57 +1,72 @@
-// mob-products.js
 import { applyDarkModeToPage } from './theme.js';
+import { filterButton } from './filter-button.js';
+import { setupPagination } from './pagination.js';  // your separate pagination module
+
 const productsContainer = document.querySelector('.discover-section .mob-items-container');
+const searchInput = document.getElementById('products-search');
+const PRODUCTS_PER_PAGE = 4;
 
+let allProducts = [];
+let currentPage = 1;
+let filteredProducts = [];
 
-// product list
-const fullProducts = [
-  { company: 'Asus', name: 'ROG STRIX G16', price: '2.000.000 IQD', img: 'Assests/Images/laptop-img.png', category: 'laptop' },
-  { company: 'Fantech', name: 'WH06 WIRELESS', price: '75.000 IQD', img: 'Assests/Images/Headphone.png', category: 'headphone' },
-  { company: 'Microsoft', name: 'XBOX JOYSTICK', price: '50.000 IQD', img: 'Assests/Images/Xbox-One-Controller.png', category: 'joystick' },
-  { company: 'Apple', name: 'MacBook Air', price: '3.000.000 IQD', img: 'Assests/Images/macbook-air.png', category: 'laptop' },
-  { company: 'Logitech', name: 'MX Master 3', price: '150.000 IQD', img: 'Assests/Images/mx-master3.png', category: 'mouse' },
-];
-
+// Create product card HTML
 function createProductCard(product) {
   return `
     <div class="mob-item-card cont-border product-card"
          data-name="${product.name}"
          data-price="${product.price}"
-         data-brand="${product.company}"
-         data-image="${product.img}">
-
+         data-brand="${product.brand}"
+         data-image="${product.image}">
       <div class="mob-item-pic cont-border">
-        <img class="product-image" src="${product.img}" alt="${product.name}">
+        <img class="product-image" src="${product.image}" alt="${product.name}">
       </div>
-
       <div class="mob-item-details">
-        <p class="comp-name">${product.company}</p>
+        <p class="comp-name">${product.brand}</p>
         <h1 class="mob-item-name">${product.name}</h1>
         <p class="mob-item-price">${product.price}</p>
       </div>
-
       <div class="interaction-buttons">
         <div class="heart cont-border"><i class="bi bi-suit-heart"></i></div>
         <div class="mob-add-to-cart cont-border"><i class="bi bi-plus"></i></div>
       </div>
-
     </div>
   `;
 }
 
-
-
-function renderProducts(products) {
+// Render products for current page
+function renderProducts(products, page = 1) {
   if (!productsContainer) return;
-  productsContainer.innerHTML = '';
-  products.forEach(p => productsContainer.innerHTML += createProductCard(p));
+  const start = (page - 1) * PRODUCTS_PER_PAGE;
+  const end = start + PRODUCTS_PER_PAGE;
+  const paginatedProducts = products.slice(start, end);
+
+  productsContainer.innerHTML = paginatedProducts.map(createProductCard).join('');
 
   const isDark = localStorage.getItem('darkMode') === 'true';
   applyDarkModeToPage(isDark);
 
+  setupHearts();
+  setupProductClicks();
+}
+
+// Setup heart icon toggle
+ function setupHearts() {
+  document.querySelectorAll('.heart').forEach(heart => {
+    heart.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const icon = heart.querySelector('i');
+      icon.classList.toggle('bi-suit-heart');
+      icon.classList.toggle('bi-suit-heart-fill');
+    });
+  });
+}
+
+// Setup product card clicks for navigation
+function setupProductClicks() {
   document.querySelectorAll('.product-card').forEach(card => {
     card.addEventListener('click', (e) => {
-      if (e.target.closest('.heart')) return; // allow heart click without navigating
+      if (e.target.closest('.heart')) return; // ignore heart clicks
       const imageEl = card.querySelector('.product-image');
       if (!imageEl) return;
 
@@ -59,52 +74,64 @@ function renderProducts(products) {
       const { name, price, brand } = card.dataset;
       localStorage.setItem('selectedProduct', JSON.stringify({ image, name, price, brand }));
       window.location.href = '../product/product.html';
+      filterButton();
     });
   });
+}
 
-  }
+// Filter products by search query
+function filterProducts(query) {
+  if (!query) return allProducts;
+  const lowerQuery = query.toLowerCase();
+  return allProducts.filter(p =>
+    p.name.toLowerCase().includes(lowerQuery) ||
+    p.brand.toLowerCase().includes(lowerQuery) ||
+    p.category.toLowerCase().includes(lowerQuery)
+  );
+}
 
-  function setupHeart() {
-    document.querySelectorAll('.heart').forEach(heart => {
-      heart.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const icon = heart.querySelector('i');
-        icon.classList.toggle('bi-suit-heart');
-        icon.classList.toggle('bi-suit-heart-fill');
-      });
-    });
-  }
-
+// Setup search input event
 function setupSearch() {
-  const searchInput = document.getElementById('products-search');
-  
   if (!searchInput) return;
-  searchInput.addEventListener('input', () => {
-    const query = searchInput.value.trim().toLowerCase();
-    const filtered = query === ''
-      ? fullProducts.slice(0, 4)
-      : fullProducts.filter(p =>
-          p.name.toLowerCase().includes(query) ||
-          p.company.toLowerCase().includes(query) ||
-          p.category.toLowerCase().includes(query)
-        );
 
-    renderProducts(filtered);
-    setupHeart();
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
+    filteredProducts = filterProducts(query);
+    currentPage = 1;
+    renderProducts(filteredProducts, currentPage);
+    setupPagination(filteredProducts.length, PRODUCTS_PER_PAGE, currentPage, onPageChange);
   });
 }
 
-
-
-
-function initProducts() {
-  renderProducts(fullProducts.slice(0, 4));
-  setupSearch();
-  setupHeart();
+// Handle page change event
+function onPageChange(page) {
+  currentPage = page;
+  renderProducts(filteredProducts, currentPage);
+  setupPagination(filteredProducts.length, PRODUCTS_PER_PAGE, currentPage, onPageChange);
 }
 
-export {
-  initProducts,
-  renderProducts,
-  setupHeart
-};
+// Initialization
+async function initProducts() {
+  try {
+    const res = await fetch('../JSON/allProducts.json');
+    allProducts = await res.json();
+
+    filteredProducts = allProducts;
+    currentPage = 1;
+
+    renderProducts(filteredProducts, currentPage);
+
+    setupSearch();
+
+    setupPagination(filteredProducts.length, PRODUCTS_PER_PAGE, currentPage, onPageChange);
+
+    filterButton();
+
+  } catch (error) {
+    console.error('Failed to load products:', error);
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initProducts);
+
+export { initProducts, setupHearts };

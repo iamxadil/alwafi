@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.25); /* dim background */
+  background: rgba(0, 0, 0, 0.541); /* dim background */
   display: none;
   justify-content: center;
   align-items: center;
@@ -15,7 +15,7 @@
 /* Popup container with blurred background and gray border */
 #cart-popup .popup-content {
   background: rgba(228, 228, 228, 0.432);
-  backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(12px);
   border: 1.5px solid rgba(200, 200, 200, 0.6);
   border-radius: 16px;
@@ -42,17 +42,18 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
   object-fit: contain;
   margin-top: 10px !important;
+  border: 1px solid black;
 }
 
 #cart-popup .popup-item h2 {
   font-size: 1.4rem;
   margin-bottom: 0.25rem;
-  color: #222;
+  color: #000000;
 }
 
 #cart-popup .popup-item p {
   font-size: 1.15rem;
-  color: #444;
+  color: #ffffff;
   margin: 0;
   margin-top: 20px !important;
  

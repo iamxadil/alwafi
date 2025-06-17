@@ -168,11 +168,6 @@
 
 
                 <!----Mobile Version--> 
-
-
-
-
-
                 <!--Main Page Background-->
 
                 <div class="main-page-background">
@@ -183,8 +178,8 @@
 
              <nav class="mob-navigation">
                 <div class="mob-left-section">
-                    <img src="Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
-                    <i class="bi bi-handbag"></i>
+                    <img src="/Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
+                    <a href="mob-cart/mob-cart.html"><i class="bi bi-handbag"></i></a>
                     <i class="bi bi-moon dark-mode"></i>
                 </div>
 
@@ -199,38 +194,66 @@
 
 
             <!-- Mobile Search Section -->
-             <div class="mob-search-container">
-                <div class="head-title">
-                    <h1>Dream Big, Choose Bigger.</h1>
-                    <p>Create Your Journey Through us!</p>
-                </div>
+<div class="mob-search-container">
+  <div class="head-title">
+    <h1>Dream Big, Choose Bigger.</h1>
+    <p>Create Your Journey Through us!</p>
+  </div>
 
-                <div class="search-section">
-                     <div class="mob-input-wrapper">
-                    <i class="bi bi-search"></i>
-                    <input type="search" name="search" id="products-search" placeholder="Search For Your Product">
-                </div>
-                
-                    <!-- Filter Menu (initially hidden) -->
-                        <div class="filter-menu" style="display: none; margin-top: 10px;">
-                                    <!-- Condition Filter -->
-                                     <div class="filter-group">
-                                            <label><input type="checkbox" class="condition-filter" value="new"> New</label>
-                                                <label><input type="checkbox" class="condition-filter" value="used"> Used</label>
-                                                        </div>
+  <div class="search-section">
+    <!-- Search Input -->
+    <div class="mob-input-wrapper">
+      <i class="bi bi-search"></i>
+      <input type="search" name="search" id="products-search" placeholder="Search For Your Product">
+    </div>
 
-                                                    <!-- Price Filter -->
-                                          <div class="filter-group">
-                                             <label for="priceRange">Max Price: <span id="priceValue">3000000</span> IQD</label>
-                                          <input type="range" id="priceRange" min="10000" max="3000000" step="10000" value="3000000">
-                                  </div>
-                                 </div>
+    <!-- Filter button & menu wrapper -->
+    <div class="filter-wrapper">
+      <!-- Filter Button -->
+      <div class="filter-button" style="cursor: pointer;">
+        <i class="bi bi-sliders"></i>
+      </div>
 
-                <div class="filter-button">
-                    <i class="bi bi-sliders"></i>
-                </div>
-                </div>
-             </div>
+      <!-- Full Filter Menu (initially hidden) -->
+      <div class="filter-menu" style="display: none;">
+        <!-- Sort Dropdown -->
+        <div class="filter-group sort-dropdown">
+          <label for="sortOptions">Sort By:</label>
+          <select id="sortOptions" class="cont-border">
+            <option value="" disabled selected>Select...</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="a-z">Alphabetical: A to Z</option>
+            <option value="z-a">Alphabetical: Z to A</option>
+          </select>
+        </div>
+
+        <!-- Condition Filter -->
+        <div class="filter-group checkbox-filter">
+          <label><input type="checkbox" class="condition-filter" value="new"> New</label>
+          <label><input type="checkbox" class="condition-filter" value="used"> Used</label>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-group filter-price">
+          <label for="priceRange">Max Price: <span id="priceValue">3000000</span> IQD</label>
+          <input type="range" id="priceRange" min="10000" max="3000000" step="10000" value="3000000">
+        </div>
+
+        <!---Action Buttons-->
+
+        <div class="action-buttons filter-group">
+            <button id="apply-button">Apply</button>
+            <button id="reset-button">Reset</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
 
 
              <!---Mobile Slider of Products-->
@@ -239,32 +262,32 @@
 
                 <div class="pr-slide slider-border">
                     <div class="pr-image">
-                        <img src="Assests/Images/Headphone.png" alt="joystick">
+                        <img src="/Assests/Images/Headphone.png" alt="joystick">
                     </div>
                 </div>
 
                 <div class="pr-slide slider-border">
                     <div class="pr-image">
-                        <img src="Assests/Images/Joystick.png" alt="joystick">
+                        <img src="/Assests/Images/Joystick.png" alt="joystick">
                     </div>
                 </div>
 
                 <div class="pr-slide slider-border">
                     <div class="pr-image">
-                        <img src="Assests/Images/Keyboard.png" alt="joystick" style="width: 120px;">
+                        <img src="/Assests/Images/Keyboard.png" alt="joystick" style="width: 120px;">
                     </div>
                 </div>
 
 
                 <div class="pr-slide slider-border">
                     <div class="pr-image">
-                        <img src="Assests/Images/laptop-img.png" alt="joystick" style="width: 135px;">
+                        <img src="/Assests/Images/laptop-img.png" alt="joystick" style="width: 135px;">
                     </div>
                 </div>
 
                 <div class="pr-slide slider-border">
                     <div class="pr-image">
-                        <img src="Assests/Images/laptop-img.png" alt="joystick" style="width: 135px;">
+                        <img src="/Assests/Images/laptop-img.png" alt="joystick" style="width: 135px;">
                     </div>
                 </div>
 
@@ -280,74 +303,9 @@
                     <i class="lni lni-arrow-right"></i>
                 </div>
 
-                <!--Products Container-->
-                <div class="mob-items-container">
-
-
-                    <!---Product Card-->
-                    <div class="mob-item-card cont-border">
-                         <!--Product Image-->
-                    <div class="mob-item-pic cont-border">
-                        <img src="Assests/Images/laptop-img.png" alt="headphone">
-                    </div>
-                     <!--Product Details-->
-                    <div class="mob-item-details">
-                        <p class="comp-name">Asus</p>
-                        <h1 class="mob-item-name">ROG STRIX G16</h1>
-                        <p class="mob-item-price">2.000.000 IQD</p>
-                        <div class="heart">
-                            <i class="bi bi-suit-heart"></i>
-                        </div>
-
-                        
-                    </div>
-                    </div>
-                    <!---End of Card-->
-
-
-                    <!---Product Card-->
-                    <div class="mob-item-card cont-border">
-                         <!--Product Image-->
-                    <div class="mob-item-pic cont-border">
-                        <img src="Assests/Images/Headphone.png" alt="headphone">
-                    </div>
-                     <!--Product Details-->
-                    <div class="mob-item-details">
-                        <p class="comp-name">Fantech</p>
-                        <h1 class="mob-item-name">WH06 WIRELESS</h1>
-                        <p class="mob-item-price">75.000 IQD</p>
-
-                        <div class="heart">
-                            <i class="bi bi-suit-heart"></i>
-                        </div>
-
-                        
-                    </div>
-                    </div>
-                    <!---End of Card-->
-
-                    
-                    <!---Product Card-->
-                    <div class="mob-item-card cont-border">
-                         <!--Product Image-->
-                    <div class="mob-item-pic cont-border">
-                        <img src="Assests/Images/Xbox-One-Controller.png" alt="headphone" style="width: 100px;">
-                    </div>
-                     <!--Product Details-->
-                    <div class="mob-item-details">
-                        <p class="comp-name">Microsoft</p>
-                        <h1 class="mob-item-name">XBOX JOYSTICK</h1>
-                        <p class="mob-item-price">50.000 IQD</p>
-
-                        <div class="heart">
-                            <i class="bi bi-suit-heart"></i>
-                        </div>
-
-                       
-                    </div>
-                    </div>
-                    <!---End of Card-->
-                </div>
+                <div class="mob-items-container"></div>
+                 <div class="pagination-container"></div>
+                
              </div>
 
              <!---End of Discover Section-->
@@ -370,7 +328,7 @@
                     <div class="mob-item-card cont-border product-card">
                      <!--Product Image-->
                     <div class="mob-item-pic cont-border">
-                        <img src="Assests/Images/laptop-img.png" alt="ROG STRIX G16">
+                        <img src="/Assests/Images/laptop-img.png" alt="ROG STRIX G16">
                     </div>
 
                     <!--Product Details-->
@@ -396,7 +354,7 @@
                     <div class="mob-item-card cont-border product-card">
                      <!--Product Image-->
                     <div class="mob-item-pic cont-border">
-                        <img src="Assests/Images/laptop-img.png" alt="ROG STRIX G16">
+                        <img src="/Assests/Images/laptop-img.png" alt="ROG STRIX G16">
                     </div>
 
                     <!--Product Details-->

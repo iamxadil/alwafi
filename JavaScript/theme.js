@@ -15,7 +15,8 @@ function applyDarkModeToPage(isDark) {
     citySelect: document.querySelector('#citySelect'),
     contBorders: document.querySelectorAll('.cont-border'),
     sliderBorders: document.querySelectorAll('.slider-border'),
-    filterButton: document.querySelector('.filter-button')
+    filterButton: document.querySelector('.filter-button'),
+    
   };
 
   pageBody.classList.toggle('dark-mode-style', isDark);
@@ -29,7 +30,6 @@ function applyDarkModeToPage(isDark) {
   if(elements.citySelect) elements.citySelect.classList.toggle('dark-border', isDark);
   if(elements.filterButton) elements.filterButton.classList.toggle('dark-border', isDark);
   if(SearchButton) SearchButton.classList.toggle('dark-search-button', isDark);
-
   if(homeButton) homeButton.style.color = isDark ? 'white' : 'black';
 
   wafiLogos.forEach(logo => {

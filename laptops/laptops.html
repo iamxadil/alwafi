@@ -11,6 +11,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Style+Script&display=swap" rel="stylesheet">
 </head>
 <body data-product-type="laptop">
     <!--Preloader-->
@@ -132,10 +135,7 @@
 
         <!---Items-->
 
-
-
         <div class="third-page">
-
         <div class="laptops-title">
             <h1>Laptops </h1>
             <div class="two-bars">
@@ -144,14 +144,137 @@
             </div>
         </div>
 
-                         <!--Laptops Cards-->
-                        <div class="laptops-cards products-cards">
-                            <!-- Laptop cards will be injected here by JavaScript -->
-                            </div>
+        <!--Laptops Cards-->
+        <div class="laptops-cards products-cards">
+        <!-- Laptop cards will be injected here by JavaScript -->
+        </div>
+        </div>
 
+
+
+
+        <!---Mobile Version-->
+
+         <!-- Mobile Navigation Bar -->
+
+             <nav class="mob-navigation">
+                <div class="mob-left-section">
+                    <img src="/Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
+                    <a href="../mob-cart/mob-cart.html"><i class="bi bi-handbag"></i></a>
+                    <i class="bi bi-moon dark-mode"></i>
+                </div>
+
+                <div class="mob-right-section">
+                     <div class="two-bars-menu">
+                      <div class="first-bar"></div>
+                      <div class="second-bar"></div>
+                    </div> <!-- Hamburger Icon -->
+                </div>
+             </nav>
+
+
+
+             <!--Head title Animated-->
+             <div class="be-creative-container">
+  <svg
+    class="stroke-svg"
+    viewBox="0 0 850 380"
+    preserveAspectRatio="xMidYMid meet"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <defs>
+      <linearGradient id="gradient-stroke" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#ff6a00">
+          <animate
+            attributeName="stop-color"
+            values="#ff6a00;#ee0979;#00c9ff;#ff6a00"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </stop>
+        <stop offset="100%" stop-color="#ee0979">
+          <animate
+            attributeName="stop-color"
+            values="#ee0979;#00c9ff;#ff6a00;#ee0979"
+            dur="10s"
+            repeatCount="indefinite"
+          />
+        </stop>
+      </linearGradient>
+    </defs>
+
+    <text
+      class="stroke-text"
+      x="50%"
+      y="40%"
+      text-anchor="middle"
+      dominant-baseline="middle"
+    >
+      <tspan x="50%">Be Special</tspan>
+      <tspan x="50%" dy="1.4em">& Creative</tspan>
+    </text>
+  </svg>
 </div>
 
 
+
+            
+              
+                        <!-- Mobile Search Section -->
+<div class="mob-search-container">
+  
+  <div class="search-section">
+    <!-- Search Input -->
+    <div class="mob-input-wrapper">
+      <i class="bi bi-search"></i>
+      <input type="search" name="search" id="products-search" placeholder="Search For Your Product">
+    </div>
+
+    <!-- Filter button & menu wrapper -->
+    <div class="filter-wrapper">
+      <!-- Filter Button -->
+      <div class="filter-button" style="cursor: pointer;">
+        <i class="bi bi-sliders"></i>
+      </div>
+
+      <!-- Full Filter Menu (initially hidden) -->
+      <div class="filter-menu" style="display: none;">
+        <!-- Sort Dropdown -->
+        <div class="filter-group sort-dropdown">
+          <label for="sortOptions">Sort By:</label>
+          <select id="sortOptions" class="cont-border">
+            <option value="" disabled selected>Select...</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="a-z">Alphabetical: A to Z</option>
+            <option value="z-a">Alphabetical: Z to A</option>
+          </select>
+        </div>
+
+        <!-- Condition Filter -->
+        <div class="filter-group checkbox-filter">
+          <label><input type="checkbox" class="condition-filter" value="new"> New</label>
+          <label><input type="checkbox" class="condition-filter" value="used"> Used</label>
+        </div>
+
+        <!-- Price Filter -->
+        <div class="filter-group filter-price">
+          <label for="priceRange">Max Price: <span id="priceValue">3000000</span> IQD</label>
+          <input type="range" id="priceRange" min="200000" max="4000000" step="50000" value="3000000">
+        </div>
+
+        <!---Action Buttons-->
+
+        <div class="action-buttons filter-group">
+            <button id="apply-button">Apply</button>
+            <button id="reset-button">Reset</button>
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 
@@ -171,9 +294,6 @@
               </div>
                 </div>
 
-
-
-    
     <script type="module" src="./laptops.js"></script>
     
 </body>

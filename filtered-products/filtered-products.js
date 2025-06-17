@@ -1,6 +1,7 @@
 import '../main/index.js';
 import { applyDarkModeToPage } from '../JavaScript/theme.js';
-import { setupHeart } from '../JavaScript/mob-products.js';
+import { setupHearts } from '../JavaScript/mob-products.js';
+import { filterButton } from '../JavaScript/filter-button.js';
 
 const urlParams = new URLSearchParams(window.location.search);
 const categoryType = urlParams.get('type');
@@ -36,6 +37,7 @@ function initializePage() {
 
   renderProducts(filteredProducts);
   setupSearch(filteredProducts);
+  
 }
 
 function createProductCard(product) {
@@ -76,7 +78,7 @@ function renderProducts(productsToRender) {
 
 const isDark = localStorage.getItem('darkMode') === 'true';
 applyDarkModeToPage(isDark);
-setupHeart();
+setupHearts();
 
 }
 
@@ -110,8 +112,13 @@ function setupSearch(initialFilteredProducts) {
     );
 
     renderProducts(searchedProducts);
+    filterButton();
   });
 }
 
+
+
+
 // Start by fetching products from JSON
 fetchProducts();
+

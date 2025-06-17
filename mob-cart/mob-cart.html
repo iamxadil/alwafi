@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="mob-cart.css">
+    <title>Awlafi Company</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <link rel="icon" type="image/x-icon" href="Assests/Icons/wafi-logo-filled.svg">
+    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+
+
+    <!---side menu-->
+      <div class="side-menu">
+        <div class="cancel-btn">
+            <i class="bi bi-x-lg"></i>
+        </div>
+        <div class="menu-items">
+            <div>
+                <h1><i class="bi bi-house"></i></h1>
+                <h1 class="side home" ><a href="index.html" style="color: white; text-decoration: none;">Home</a></h1>
+            </div>
+            <div class="products-menu">
+                <div class="products-toggle">
+                    <h1><i class="bi bi-dice-3"></i></h1>
+                    <h1 class="side products">Products <i class="bi bi-caret-down-fill"></i></h1>
+                </div>
+                <div class="dropdown">
+                    <a href="laptops/laptops.html" class="dropdown-item" style="color: white; text-decoration: none;">Laptops</a>
+                    <a href="accessories/accessories.html" class="dropdown-item" style="color: white; text-decoration: none;">Accessories</a>
+                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">Offers</a>
+                    <a href="audios/audios.html" class="dropdown-item" style="color: white; text-decoration: none;">Headphones</a>
+                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">PCs</a>
+                </div>
+            </div>
+            <div>
+                <h1><i class="bi bi-person-circle"></i></h1>
+                <h1 class="side login"><a href="login/login.html" style="color: white; text-decoration: none;">Login</a></h1>
+            </div>
+            <div>
+                <h1><i class="bi bi-telephone"></i></h1>
+                <h1 class="side contact"><a href="Contact/contact.html">Contact</a></h1>
+            </div>
+            <div>
+                <h1><i class="bi bi-info-circle"></i></h1>
+                <h1 class="side about">About</h1>
+            </div>
+        </div>
+    </div>
+
+
+
+                    <!-- Mobile Navigation Bar -->
+
+             <nav class="mob-navigation">
+                <div class="mob-left-section">
+                    <a class="back-btn"><i class="bi bi-arrow-left"></i></a>
+                </div>
+
+                <div class="mob-right-section">
+                     <div class="two-bars-menu">
+                      <div class="first-bar"></div>
+                      <div class="second-bar"></div>
+                    </div> <!-- Hamburger Icon -->
+                </div>
+             </nav>
+
+
+
+
+             <!--Products in Cart-->
+             <div class="mob-pr-cart">
+
+
+                <!---Head Title-->
+                <div class="title">
+                    <h1>Your Cart</h1>
+                </div>
+
+
+
+                <!--Container of Products-->
+                <div class="mob-pr-card-container">
+
+
+                    <!---Product Card-->
+                    <div class="pr-content">
+
+
+                        <!--Product Image-->
+                        <div class="pr-cart-img cont-border">
+                            <img src="../Assests/Images/macbook-air.png" alt="macbook-air">
+                        </div>
+
+
+                        <!--Details : Name, Price, Etc-->
+                        <div class="pr-cart-details">
+                            <div class="pr-company">
+                                <p>Apple</p>
+                            </div>
+
+                            <div class="pr-name">
+                                <h1>MACBOOK AIR</h1>
+                            </div>
+
+                            <div class="pr-price">
+                                <p>1.500.000 IQD</p>
+                            </div>
+                        </div>
+
+
+                        <!--Increase or Decrease Quantity-->
+                        <div class="quantity-selector">
+
+                            <!---Inc-->
+                            <div class="increase-btn cont-border">
+                                <i class="bi bi-plus"></i>
+                            </div>
+
+                            <!--Quantity of Product-->
+                            <div class="quantity">
+                                <p>2</p>
+                            </div>
+
+                             <!---Dec-->
+                            <div class="decrease-btn cont-border">
+                                <i class="bi bi-dash"></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+             </div>
+
+
+
+             <!---Proceed to checkout -->
+
+             <div class="mob-checkout-container">
+
+                <!---Delivery price-->
+                <div class="mob-deliv">
+                    <p>Delivery</p>
+                    <p>0.00 IQD</p>
+                </div>
+
+                <!---Total price-->
+                <div class="mob-total">
+                    <p>Total</p>
+                    <p>0.00 IQD</p>
+                </div>
+
+
+                <button>Proceed To chekcout</button>
+
+
+             </div>
+
+
+
+
+
+
+ <script src="mob-cart.js" type="module"></script>   
+</body>

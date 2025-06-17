@@ -1,0 +1,139 @@
+{
+  "laptops": [
+    {
+      "name": "ASUS ROG STRIX G16",
+      "priceDisplay": "2.000.000 IQD",
+      "priceValue": 2000000,
+      "image": "/Assests/Images/laptop-img.png",
+      "sku": "G614JI-N3169",
+      "brand": "ASUS",
+      "color": "Black",
+      "form": "Gaming"
+    },{
+      "name": "Dell Inspiron 15",
+      "priceDisplay": "1,500,000 IQD",
+      "priceValue": 1500000,
+      "image": "/Assests/Images/laptop2.png",
+      "sku": "INSP15-2023",
+      "brand": "Dell",
+      "color": "Silver",
+      "form": "Notebook"
+    },
+    {
+      "name": "HP Pavilion 14",
+      "priceDisplay": "1,200,000 IQD",
+      "priceValue": 1200000,
+      "image": "/Assests/Images/laptop3.png",
+      "sku": "PAV14-HP",
+      "brand": "HP",
+      "color": "Gray",
+      "form": "Ultrabook"
+    },
+    {
+      "name": "HP Pavilion 14",
+      "priceDisplay": "1,200,000 IQD",
+      "priceValue": 1200000,
+      "image": "/Assests/Images/laptop3.png",
+      "sku": "PAV14-HP",
+      "brand": "HP",
+      "color": "Gray",
+      "form": "Ultrabook"
+    },
+    {
+      "name": "HP Pavilion 14",
+      "priceDisplay": "1,200,000 IQD",
+      "priceValue": 1200000,
+      "image": "/Assests/Images/laptop3.png",
+      "sku": "PAV14-HP",
+      "brand": "HP",
+      "color": "Gray",
+      "form": "Ultrabook"
+    }
+  ],
+  "accessories": [
+    {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+    {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+    {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+    {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    }
+    
+  ],
+
+  "audios": [
+     {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+     {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+     {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    },
+     {
+      "name": "WIRELESS FANTECH WH06",
+      "priceDisplay": "75.000 IQD",
+      "priceValue": 75000,
+      "image": "/Assests/Images/Headset.png",
+      "sku": "WH06",
+      "brand": "Fantech",
+      "color": "white",
+      "form": "Over Ear"
+    }
+  ]
+}

@@ -1,5 +1,6 @@
 // File: login/login.js
-import '../main/index.js'
+import '../main/index.js';
+
 const searchIcon = document.getElementById('search-icon');
 const navSearchInput = document.getElementById('nav-search-input');
 const navH1 = searchIcon.closest('h1');
@@ -30,5 +31,6 @@ document.addEventListener('click', (e) => {
     navSearchInput.blur();
   }
 });
+
 
 

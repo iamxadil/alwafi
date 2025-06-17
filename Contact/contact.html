@@ -1,181 +1,364 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="contact.css">
-    <title>Awlafi Company</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <link rel="icon" type="image/x-icon" href="../Assests/Icons/wafi-logo-filled.svg">
-    <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contact Awlafi Company - Reach us via email, phone, or message form. We're here to help.">
+  <link rel="stylesheet" href="contact.css">
+  <title>Awlafi Company</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  <link rel="icon" type="image/x-icon" href="../Assests/Icons/wafi-logo-filled.svg">
+  <link rel="stylesheet" href="https://cdn.lineicons.com/5.0/lineicons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/f23f48d8d1.js" crossorigin="anonymous" defer></script>
 </head>
-<!---Preloader-->
-    <div id="preloader">
-        <svg id="logo-preloader" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-          <path class="logo-stroke" d="M280.5,291.49l21.72,38.32c3.51,6.23,12.29,6.23,15.97.16l63.39-106.18,25.55-44.39c3.51-6.23-.96-13.89-7.98-13.89h-45.83c-3.35,0-6.39,1.76-7.98,4.63l-30.98,53.65-33.85,58.6c-1.6,2.87-1.6,6.39,0,9.1Z"/>
-          <path class="logo-stroke" d="M219.5,291.49l-21.72,38.32c-3.51,6.23-12.29,6.23-15.97.16l-63.39-106.18-25.55-44.39c-3.51-6.23.96-13.89,7.98-13.89h45.83c3.35,0,6.39,1.76,7.98,4.63l30.98,53.65,33.85,58.6c1.6,2.87,1.6,6.39,0,9.1Z"/>
-          <path class="logo-stroke" d="M276.67,165.5h-52.53c-7.03,0-11.5,7.66-7.98,13.89l26.19,45.67c3.51,6.23,12.45,6.23,15.97,0l26.35-45.67c3.51-6.23-.96-13.89-7.98-13.89Z"/>
-        </svg>
-      </div>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <svg id="logo-preloader" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+      <path class="logo-stroke" d="M280.5,291.49l21.72,38.32c3.51,6.23,12.29,6.23,15.97.16l63.39-106.18,25.55-44.39c3.51-6.23-.96-13.89-7.98-13.89h-45.83c-3.35,0-6.39,1.76-7.98,4.63l-30.98,53.65-33.85,58.6c-1.6,2.87-1.6,6.39,0,9.1Z"/>
+      <path class="logo-stroke" d="M219.5,291.49l-21.72,38.32c-3.51,6.23-12.29,6.23-15.97.16l-63.39-106.18-25.55-44.39c-3.51-6.23.96-13.89,7.98-13.89h45.83c3.35,0,6.39,1.76,7.98,4.63l30.98,53.65,33.85,58.6c1.6,2.87,1.6,6.39,0,9.1Z"/>
+      <path class="logo-stroke" d="M276.67,165.5h-52.53c-7.03,0-11.5,7.66-7.98,13.89l26.19,45.67c3.51,6.23,12.45,6.23,15.97,0l26.35-45.67c3.51-6.23-.96-13.89-7.98-13.89Z"/>
+    </svg>
+  </div>
 
-      <!---side menu-->
-      <div class="side-menu">
-        <div class="cancel-btn">
-            <i class="bi bi-x-lg"></i>
+  <!-- Side Menu -->
+  <div class="side-menu">
+    <div class="cancel-btn"><i class="bi bi-x-lg"></i></div>
+    <div class="menu-items">
+      <div>
+        <h1><i class="bi bi-house"></i></h1>
+        <h1 class="side home"><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h1>
+      </div>
+      <div class="products-menu">
+        <div class="products-toggle">
+          <h1><i class="bi bi-dice-3"></i></h1>
+          <h1 class="side products">Products <i class="bi bi-caret-down-fill"></i></h1>
         </div>
-        <div class="menu-items">
-            <div>
-                <h1><i class="bi bi-house"></i></h1>
-                <h1 class="side home" ><a href="../index.html" style="color: white; text-decoration: none;">Home</a></h1>
-            </div>
-            <div class="products-menu">
-                <div class="products-toggle">
-                    <h1><i class="bi bi-dice-3"></i></h1>
-                    <h1 class="side products">Products <i class="bi bi-caret-down-fill"></i></h1>
-                </div>
-                <div class="dropdown">
-                    <a href="../laptops/laptops.html" class="dropdown-item" style="color: white; text-decoration: none;">Laptops</a>
-                    <a href="../accessories/accessories.html" class="dropdown-item" style="color: white; text-decoration: none;">Accessories</a>
-                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">Offers</a>
-                    <a href="../audios/audios.html" class="dropdown-item" style="color: white; text-decoration: none;">Headphones</a>
-                    <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">PCs</a>
-                </div>
-            </div>
-            <div>
-                <h1><i class="bi bi-person-circle"></i></h1>
-                <h1 class="side login"><a href="../login/login.html" style="color: white; text-decoration: none;">Login</a></h1>
-            </div>
-            <div>
-                <h1><i class="bi bi-telephone"></i></h1>
-                <h1 class="side contact"><a href="../Contact/contact.html">Contact</a></h1>
-            </div>
-            <div>
-                <h1><i class="bi bi-info-circle"></i></h1>
-                <h1 class="side about">About</h1>
-            </div>
+        <div class="dropdown">
+          <a href="../laptops/laptops.html" class="dropdown-item" style="color: white; text-decoration: none;">Laptops</a>
+          <a href="../accessories/accessories.html" class="dropdown-item" style="color: white; text-decoration: none;">Accessories</a>
+          <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">Offers</a>
+          <a href="../audios/audios.html" class="dropdown-item" style="color: white; text-decoration: none;">Headphones</a>
+          <a href="#" class="dropdown-item" style="color: white; text-decoration: none;">PCs</a>
         </div>
+      </div>
+      <div>
+        <h1><i class="bi bi-person-circle"></i></h1>
+        <h1 class="side login"><a href="../login/login.html" style="color: white; text-decoration: none;">Login</a></h1>
+      </div>
+      <div>
+        <h1><i class="bi bi-telephone"></i></h1>
+        <h1 class="side contact"><a href="../Contact/contact.html" style="color: white; text-decoration: none;">Contact</a></h1>
+      </div>
+      <div>
+        <h1><i class="bi bi-info-circle"></i></h1>
+        <h1 class="side about">About</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Nav Bar -->
+  <nav>
+    <div class="main-box">
+      <div class="left-section">
+        <img src="../Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
+        <h1>
+          <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
+          <input type="search" id="nav-search-input" placeholder="Search...">
+        </h1>
+        <h1><a href="../login/login.html" style="color: black; text-decoration: none;"><i class="bi bi-person"></i></a></h1>
+        <h1><a href="../cart/cart.html" style="color: black; position: relative;"><i class="bi bi-cart"></i><span class="cart-badge" id="cart-count">0</span></a></h1>
+        <h1 class="dark-mode"><i class="bi bi-moon"></i></h1>
+      </div>
+      <div class="right-section">
+        <h1 class="home"><a href="../index.html" style="color: black; text-decoration: none;" class="home-button">Home</a></h1>
+        <div class="dropdown">
+          <h1 class="nav-link">Products</h1>
+          <div class="dropdown-menu">
+            <a href="../laptops/laptops.html">Laptops</a>
+            <a href="../accessories/accessories.html">Accessories</a>
+            <a href="../audios/audios.html">Audios</a>
+          </div>
+        </div>
+        <h1>Contact</h1>
+        <h1>About</h1>
+        <div class="two-bars-menu">
+          <div class="first-bar"></div>
+          <div class="second-bar"></div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main Components -->
+  <div class="component-container">
+    <div class="snail-shape">
+      <img src="../Assests/Images/Snail-Shape.png" alt="snail" class="snail">
     </div>
 
-    <!---Nav Bar-->
-    <nav>
-            <div class="main-box">
-                <div class="left-section">
-                    <img src="../Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo">
+    <div class="contact-box">
+      <div class="left-info">
+        <div class="top-layer"></div>
+        <div class="left-info-texts">
+          <div class="location">
+            <h1>Location</h1>
+            <p>Iraq, Baghdad<br>Nearby Techn-logical University.</p>
+          </div>
+          <div class="phone">
+            <h1>Phone</h1>
+            <p>+964 784 497 0384</p>
+          </div>
+          <div class="hours">
+            <h1>Hours</h1>
+            <p>9AM-8PM</p>
+          </div>
+        </div>
+      </div>
 
-                    <h1>
-                        <i class="bi bi-search" id="search-icon" style="cursor:pointer;"></i>
-                        <input type="search" id="nav-search-input" placeholder="Search...">
-                    </h1>
-                    
-                    <h1><a href="../login/login.html" style="color: black; text-decoration: none;"><i class="bi bi-person"></i></a></h1>
-                    <h1><a href="../cart/cart.html" style="color: black; position: relative;"><i class="bi bi-cart"></i><span class="cart-badge" id="cart-count">0</span></a></h1>
-                    <h1 class="dark-mode"><i class="bi bi-moon"></i></h1>
+      <div class="right-info">
+        <div class="top-layer"></div>
+        <div class="right-info-container">
+          <h1 id="header-text">Feel Free and Contact Us</h1>
+          <form action="#" method="POST" class="message-form">
+            <div class="name-input">
+              <h1>Full Name</h1>
+              <input type="text" name="fullname" required>
+            </div>
+            <div class="email-input">
+              <h1>Email</h1>
+              <input type="email" name="email" required>
+            </div>
+            <div class="message-input">
+              <h1>Message</h1>
+              <textarea name="message" required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+ <!---Mobile Version-->
+
+ <!-- Mobile Navigation Bar -->
+
+             <nav class="mob-navigation">
+                <div class="mob-left-section">
+                    <a href="/index.html"><img src="/Assests/Icons/wafi-logo-outline.svg" alt="logo" class="wafi-logo"></a>
+                    <a href="/mob-cart/mob-cart.html"><i class="bi bi-handbag"></i></a>
+                    <i class="bi bi-moon dark-mode"></i>
                 </div>
-                <div class="right-section">
-                    <h1 class="home"><a href="../index.html" style="color: black; text-decoration: none;" class="home-button">Home</a></h1>
-                    <div class="dropdown">
-                      <h1 class="nav-link">Products</h1>
-                      <div class="dropdown-menu">
-                        <a href="../laptops/laptops.html">Laptops</a>
-                        <a href="../accessories/accessories.html">Accessories</a>
-                        <a href="../audios/audios.html">Audios</a>
-                      </div>
+
+                <div class="mob-right-section">
+                     <div class="two-bars-menu">
+                      <div class="first-bar"></div>
+                      <div class="second-bar"></div>
+                    </div> <!-- Hamburger Icon -->
+                </div>
+             </nav>
+
+
+             <!--Mobile Contact Section-->
+
+
+             <div class="call-us-section">
+
+              <!--Title-->
+              <div class="head-title">
+                <h1>Contact us</h1>
+                <p>Make your journey easier<br>feel free and contact us.</p>
+              </div>
+
+              <!--Call & Email Cards-->
+
+
+              <div class="contact-cards">
+
+
+                <!---Card-->
+
+                <div class="call-us-card cont-border ">
+
+                <!--Icon-->
+                <div class="icon-container">
+                  <div class="icon-subcontainer cont-border"><i class="bi bi-telephone"></i></div>
+                  <h1>Call us</h1>
+                </div>
+                
+
+                <!--Card Details-->
+                <div class="content">
+                  <p>0784 497 0384</p>
+                  <p>Our team is online</p>
+                </div>
+
+              </div>
+
+
+
+              <!---Card-->
+              
+              <div class="email-us-card cont-border">
+
+                <!--Icon-->
+                <div class="icon-container">
+                  <div class="icon-subcontainer cont-border"><i class="bi bi-envelope-paper"></i></div>
+                  <h1>Email us</h1>
+                </div>
+
+                <!--Card Details-->
+                <div class="content">
+                  <p>Fast response & service</p>
+                  <p>Go to email section</p>
+                </div>
+
+              </div>
+
+              </div>
+              <!--End of contact Cards-->
+          
+             </div>
+             <!---End of Call us section-->
+
+
+             <div class="social-media-section">
+
+
+              <!---Title-->
+              <div class="head-title">
+                <p>Social Media</p>
+              </div>
+
+
+              <!---Social Media Cards Container-->
+
+
+              <!---Container-->
+              <div class="media-container">
+
+
+                <!---Card-->
+                <div class="social-card cont-border">
+                  <div class="social-subcontainer">
+                    <div class="icon"><i class="bi bi-instagram"></i></div>
+                    <div class="social-content">
+                       <p>Instagram</p>
+                        <p>@alwafi.co1</p>
                     </div>
-                  
-                    <h1>Contact</h1>
-                    <h1>About</h1>
-                         <div class="two-bars-menu">
-            <div class="first-bar"></div>
-            <div class="second-bar"></div>
-            </div>
-        </nav>
+                   
+                  </div>
 
-        <!--Main Components-->
-        <div class="component-container">
+                  <div class="status">
+                    <p>Currently</p>
 
-            <!--snail shape background-->
-             <div class="snail-shape">
-            <img src="../Assests/Images/Snail-Shape.png" alt="snail" class="snail">
-        </div>
-    
-             <div class="contact-box">
 
-            <div class="left-info">
-                <!---Blur Layers-->
-                <div class="top-layer"></div>
+                    <div class="status-subcontent">
+                      <p class="on-off"></p>
+                      <div class="dot"></div>
+                    </div>
+                    </div>
 
-                <!---Info-->
-
-                <div class="left-info-texts">
-                    <div class="location">
-                    <h1>location</h1>
-                    <p>Iraq, Baghdad<br>
-                        Nearby Techn-<br>
-                        logical University.</p>
+                  <div class="go-button"><i class="bi bi-link-45deg"></i></div>
                 </div>
 
-                <div class="phone">
-                    <h1>Phone</h1>
-                    <p>+964 784 497 0384</p>
-                </div>
+                <!---Card-->
+                <div class="social-card cont-border">
 
-                <div class="hours">
-                    <h1>Hours</h1>
-                    <p>9AM-8PM</p>
-                </div>
+                  <div class="social-subcontainer">
+                    <div class="icon"><i class="bi bi-whatsapp"></i></div>
 
-                </div>
-
-            </div>
-
-
-            <!--right info-->
-            <div class="right-info">
-            <div class="top-layer"></div>
-                
-                <div class="right-info-container">
-                <h1 id="header-text">Feel Free and Contact Us</h1>
+                    <div class="social-content">
+                      <p>Whatsapp</p>
+                      <p>@alwafi.co1</p>
+                    </div>
                     
-                    <form action="" class="message-form">
+                  </div>
 
-                        <div class="name-input">
-                            <h1>Full Name</h1>
-                            <input type="text">
-                        </div>
+                   <div class="status">
+                    <p>Currently</p>
 
-                        <div class="email-input">
-                            <h1>Email</h1>
-                            <input type="email" required>
-                        </div>
 
-                        <div class="message-input">
-                            <h1>Message</h1>
-                            <textarea name="message" required></textarea>
-                        </div>
+                    <div class="status-subcontent">
+                      <p class="on-off"></p>
+                      <div class="dot"></div>
+                    </div>
+                    </div>
 
-                        <button>
-                            Send Message
-                        </button>
 
-                        
-                    </form>
-                
-                 
-                    
+                  <div class="go-button"><i class="bi bi-link-45deg"></i></div>
                 </div>
 
-               
-               
-        </div>
-       
+                <!---Card-->
+                <div class="social-card cont-border">
+
+                  <div class="social-subcontainer">
+                    <div class="icon"><i class="lni lni-telegram"></i></div>
+                    <div class="social-content">
+                      <p>Telegram</p>
+                      <p>@alwafi.co1</p>
+                    </div>
+                    
+                  </div>
+
+                   <div class="status">
+                    <p>Currently</p>
 
 
-    <script type="module" src="./contact.js"></script>
-<body>
-    
+                    <div class="status-subcontent">
+                      <p class="on-off"></p>
+                      <div class="dot"></div>
+                    </div>
+                    </div>
+
+
+                  <div class="go-button"><i class="bi bi-link-45deg"></i></div>
+                </div>
+
+                <!---Card-->
+                <div class="social-card cont-border">
+
+                  <div class="social-subcontainer">
+                    <div class="icon" style="margin-left: 12px;"><i class="fa-brands fa-facebook-f"></i></div>
+                    <div class="social-content">
+                      <p>Facebook</p>
+                      <p>@alwafi.co1</p>
+                    </div>
+                    
+                  </div>
+
+                   <div class="status">
+                    <p>Currently</p>
+
+
+                    <div class="status-subcontent">
+                      <p class="on-off"></p>
+                      <div class="dot"></div>
+                    </div>
+                    </div>
+
+
+                  <div class="go-button"><i class="bi bi-link-45deg"></i></div>
+
+                </div>
+
+              </div>
+              <!--End of Media Container-->
+
+             </div>
+
+
+
+
+
+
+  <script type="module" src="./contact.js"></script>
 </body>
+</html>

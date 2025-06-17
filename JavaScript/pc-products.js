@@ -1,3 +1,5 @@
+import { applyDarkModeToPage } from "./theme.js";
+
 const colorCirclesHTML = `
   <div class="color-circles">
     <h1 class="laptop-color">Colors</h1>
@@ -8,138 +10,6 @@ const colorCirclesHTML = `
     </div>
   </div>
 `;
-
-const laptopData = [
-  {
-    name: "ASUS ROG STRIX G16 G614JI-N3169",
-    priceDisplay: "2.000.000 IQD",
-    priceValue: 2000000,
-    image: "../Assests/Images/laptop-img.png",
-    sku: "G614JI-N3169",
-    brand: "ASUS",
-    color: "Black",
-    form: "Gaming"
-  },
-  {
-    name: "ASUS ROG STRIX G16 G614JI-N3169",
-    priceDisplay: "2.000.000 IQD",
-    priceValue: 2000000,
-    image: "../Assests/Images/laptop-img.png",
-    sku: "G614JI-N3169",
-    brand: "ASUS",
-    color: "Black",
-    form: "Gaming"
-  },
-  {
-    name: "ASUS ROG STRIX G16 G614JI-N3169",
-    priceDisplay: "2.000.000 IQD",
-    priceValue: 2000000,
-    image: "../Assests/Images/laptop-img.png",
-    sku: "G614JI-N3169",
-    brand: "ASUS",
-    color: "Black",
-    form: "Gaming"
-  },
-  {
-    name: "ASUS ROG STRIX G16 G614JI-N3169",
-    priceDisplay: "2.000.000 IQD",
-    priceValue: 2000000,
-    image: "../Assests/Images/laptop-img.png",
-    sku: "G614JI-N3169",
-    brand: "ASUS",
-    color: "Black",
-    form: "Gaming"
-  }
-];
-
-const accessoriesData = [
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  }
-];
-
-
-const audiosData = [
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-  {
-    name: "WIRELESS FANTECH WH06",
-    priceDisplay: "75.000 IQD",
-    priceValue: 75000,
-    image: "../Assests/Images/Headset.png",
-    sku: "WH06",
-    brand: "Fantech",
-    color: "white",
-    form: "Over Ear"
-  },
-
-
-]
 
 function createProductCard(product, type) {
   const isLaptop = type === "laptop";
@@ -174,7 +44,7 @@ function setupProductClickEvents() {
 
   productCards.forEach(card => {
     card.addEventListener('click', (e) => {
-      // Prevent button click (like Add to Cart) from triggering navigation
+      // Prevent Add to Cart button clicks from triggering navigation
       if (e.target.closest('.add-to-cart')) return;
 
       const product = {
@@ -193,62 +63,68 @@ function setupProductClickEvents() {
   });
 }
 
-function renderPCProducts(type = 'all') {
-  const laptopsContainer = document.querySelector('.laptops-cards');
-  const accessoriesContainer = document.querySelector('.accessories-cards');
-  const audiosContainer = document.querySelector('.audios-cards');
+async function renderPCProducts(category = 'all') {
+  try {
+    const response = await fetch('/JSON/pcProducts.json'); // Change this to your actual JSON path
+    if (!response.ok) throw new Error('Failed to load product data');
+    const productsData = await response.json();
 
-  if (laptopsContainer) laptopsContainer.innerHTML = '';
-  if (accessoriesContainer) accessoriesContainer.innerHTML = '';
-  if (audiosContainer) audiosContainer.innerHTML = '';
+    // Containers for each category
+    const laptopsContainer = document.querySelector('.laptops-cards');
+    const accessoriesContainer = document.querySelector('.accessories-cards');
+    const audiosContainer = document.querySelector('.audios-cards');
 
-  switch(type) {
-    case 'laptop':
-      if (laptopsContainer) {
-        laptopsContainer.innerHTML = laptopData
-          .slice(0, 4)
-          .map(product => createProductCard(product, 'laptop'))
-          .join('');
-      }
-      break;
+    // Clear all containers first
+    if (laptopsContainer) laptopsContainer.innerHTML = '';
+    if (accessoriesContainer) accessoriesContainer.innerHTML = '';
+    if (audiosContainer) audiosContainer.innerHTML = '';
 
-    case 'accessory':
-      if (accessoriesContainer) {
-        accessoriesContainer.innerHTML = accessoriesData
-          .slice(0, 4)
-          .map(product => createProductCard(product, 'accessory'))
-          .join('');
-      }
-      break;
+    // Helper to render array of products into container with type
+    function renderIntoContainer(products, container, type) {
+      if (!container) return;
+      const cardsHTML = products.slice(0, 4).map(p => createProductCard(p, type)).join('');
+      container.innerHTML = cardsHTML;
+    }
 
-    case 'audio':
-      if (audiosContainer) {
-        audiosContainer.innerHTML = audiosData
-          .slice(0, 4)
-          .map(product => createProductCard(product, 'audio'))
-          .join('');
-      }
-      break;
+    if (category === 'all') {
+      // Show all categories in their containers, max 4 each
+      renderIntoContainer(productsData.laptops, laptopsContainer, 'laptop');
+      renderIntoContainer(productsData.accessories, accessoriesContainer, 'accessory');
+      renderIntoContainer(productsData.audios || [], audiosContainer, 'audio');
+    } else if (category === 'laptop') {
+      renderIntoContainer(productsData.laptops, laptopsContainer, 'laptop');
+    } else if (category === 'accessory') {
+      renderIntoContainer(productsData.accessories, accessoriesContainer, 'accessory');
+    } else if (category === 'audio') {
+      renderIntoContainer(productsData.audios || [], audiosContainer, 'audio');
+    }
 
-    case 'all':
-    default:
-      if (laptopsContainer) {
-        laptopsContainer.innerHTML = laptopData
-          .slice(0, 4)
-          .map(product => createProductCard(product, 'laptop'))
-          .join('');
-      }
-      if (accessoriesContainer) {
-        accessoriesContainer.innerHTML = accessoriesData
-          .slice(0, 4)
-          .map(product => createProductCard(product, 'accessory'))
-          .join('');
-      }
-      break;
+    setupProductClickEvents();
+
+  } catch (error) {
+    console.error('Error rendering products:', error);
   }
 
-  // Set up click events after rendering
-  setupProductClickEvents();
+  const isDark = localStorage.getItem('darkMode') === 'true';
+  applyDarkModeToPage(isDark);
 }
+
+
+function setupAddToCartButtons() {
+  const buttons = document.querySelectorAll('.add-to-cart');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.stopPropagation();  // Prevent parent click
+      // Your existing Add to Cart logic (show popup etc) goes here
+    });
+  });
+}
+
+setupAddToCartButtons();
+
+// Example usage: call this with the category you want to display
+// On main page: renderProductsPage('all');
+// On laptop page: renderProductsPage('laptop');
+// On accessory page: renderProductsPage('accessory');
 
 export { renderPCProducts };
